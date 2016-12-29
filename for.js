@@ -23,6 +23,7 @@ for (var i = 7; i >= 0; i--) {
 
 var a = 2;
 for (var i = 0; i < 15; i+=a) {
+    // Vòng lặp bắt đầu từ 0 và bước nhảy là 2 theo biến a
     console.log( "Đây là số bước nhảy tăng theo 1 biến khác từ : " + i );
 }
 
