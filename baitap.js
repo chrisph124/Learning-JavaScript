@@ -1,30 +1,38 @@
-//Tạo 2 biến để người dùng nhập vào
-var a = null;
-var b = null;
-// Biến value lưu giá trị người dùng nhập vào
-var value = '';
+// Bài tập tìm số Min và Max trong tất cả các số người dùng nhập vào
 
-// While chạy là trong khi người dùng chưa nhấn nút hủy
-// Nếu hủy thì giá trị sẽ là null và vòng lặp dùng lại
+// Tạo 2 biến Min và Max để lưu giá trị nhỏ nhất - lớn nhất
+var min = null;
+var max = null;
+// Tạo biến giá trị người dùng nhập vào
+var value = "";
+
+// Chạy vòng lặp while với điều kiện giá trị người dùng nhập vào khác null
+// Trong khi người dùng chưa nhấn hủy thì vòng while vẫn chạy vì điều kiện vẫn khác null
+// Null sẽ xuất hiện nếu người dùng nhấn hủy, lúc đó vòng lặp dừng
 while (value != null) {
-  // Hiện khung nhập để lấy giá trị
-    value = prompt ("Nhập số vào đây, nếu muốn dừng thì bấm hủy");
-    // Nếu nhấn hủy thì không thực thi code bên trong
-      if(value != null){
-        if(value == null){
-          // Gán min và max = value khi nhập giá trị lần đầu
-            min = value;
-            max = value;
+  // Xuất ra 1 prompt để hướng dẫn người dùng nhập giá trị
+  value = prompt("Nhập 1 số bất kì, nếu muốn nhập tiếp bấm ok, nếu muốn dừng bấm hủy");
+  // Kiểm tra điều kiện nếu giá trị người dùng nhập vào khác null
+  if (value != null) {
+  // Kiểm tra tiếp nếu người dùng chỉ nhập 1 giá trị hoặc các giá trị nhập vào bằng nhau
+  // Lúc này sẽ hiểu là không có giá trị nhỏ nhất hoặc lớn nhất nên điều kiện == null là biến max hay min đều được
+  // Khi đó ta cho 2 giá trị min và max cùng = value
+    if (min == null) {
+      min = value;
+      max = value;
+    }
+  // Ngược lại nếu có các giá trị khác khau để có thể so sánh tìm ra min và max
+  // Thì sẽ kiểm tra tiếp để tìm ra min - max
+  // Điều kiện để tìm ra min - max sẽ được hiểu là :
+    else {
+        if (min > value) {
+          min = value;
         }
-        else{
-          // Nếu ngược lại thì kiểm tra giá trị min - max
-            if(min > value){
-              min = value;
+        if (max < value) {
+          max = value;
             }
-            if(max < value){
-              max = value;
-              }
-          }
-      }
+        }
+    }
 }
-document.write("Min là " + min +", Max là " + max);
+
+document.write("Min là : "+ min + " " + "Max là : " + max);
