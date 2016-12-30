@@ -58,3 +58,43 @@ tinh_hieu(so1, so2);
 
 // Tùy trường hợp mà dùng return hay không return.
 // Return chỉ sử dụng khi muốn lấy kết quả trả về để xử lý tiếp
+
+
+// Giá trị mặc định của tham số
+// Trong 1 số trường hợp, tham số có thể được truyền vào hoặc không cần truyền đều được
+// Lúc này chỉ cần sử dụng nó như 1 tham số mặc định
+// Trong Javascript không có cú pháp gán giá trị mặc định nên thay vào đó, dùng toán tử ||
+
+function Msg(message){
+  message = message || "Không có tin nhắn";
+  console.log(message);
+}
+
+Msg();
+Msg("tin nhắn : bla bla bla");
+
+
+//Toán tử || gồm hai vế, trong đó nếu vế phải có giá trị rỗng (undefined, null, false, ...) kết quả sẽ trả về vế trái, ngược lại nó sẽ trả về vế phải.
+
+//Ví dụ kiểm tra năm trong các tạo hàm function
+
+function kiem_tra_nam_nhuan(nam){
+  if(nam % 100 == 0){
+    if(nam % 400 ==0){
+      return true;
+    }else{
+      return false;
+    }
+  }else if(nam % 4 == 0){
+    return true;
+  }else{
+    return false;
+  }
+}
+var nam = 2020;
+var kiemtra = kiem_tra_nam_nhuan(nam);
+if (kiemtra) {
+  console.log( nam + " là năm nhuận");
+} else {
+  console.log( nam + " không phải năm nhuận");
+}
