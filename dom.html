@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM là gì ?</title>
+</head>
+<body>
+  <h3>DOM là viết tắt của chữ Document Object Model(Mô hình các đối tượng trong tài liệu HTML)</h3>
+  <p>Trong mỗi thẻ(tag) của HTML sẽ có những thuộc tính(properties) và sự phân cấp cha-con với các thẻ khác.
+     Sự phân cấp này đc gọi là các Selector và trong DOM sẽ có nhiệm vụ xử lý các vấn đề như thay đổi thuộc tính của thẻ, cấu trúc HTML của thẻ</p>
+  <p>Để thao tác Javascript trong HTML thì phải thông qua đối tượng Document như 1 vd bên dưới : </p>
+<id id="js"></id>
+  <script type="text/javascript">
+    document.getElementById('js').innerHTML=("Chào bạn!");
+  </script>
+  <p>Bắt buộc phải viết javascript thẻ script và khi viết file javascript phải để thuộc tính type = text/javascript</p>
+  <p>Ví dụ ở trên thì getElementById có ý nghĩa là truy xuất tới 1 đối tượng có thuộc tính là id của thẻ HTML<br/>innerHTML có nghĩa là gán nội dung bên trong HTML và in ra trình duyệt </p>
+  <hr/>
+  <h3>Các thể loại của DOM trong HTML</h3>
+  <p>Việc xử lý DOM trong HTML rất phức tạp nhưng cũng rất đa dạng vì javascript cung cấp rất nhiều phương thức, đối tượng và mỗi thành phần đều đảm nhận 1 nhiệm vụ riêng biệt để tiện sử dụng</p>
+  <p>Danh sách chia nhóm DOM : </p>
+  <ol>
+    <li><i>DOM document</i> : lưu trữ toàn bộ các thành phần trong tài liệu website</li>
+    <li><i>DOM element</i> : truy xuất tới thẻ trong HTML thông qua các thuộc tính như tên của id, class</li>
+    <li><i>DOM HTML</i> : thay đổi giá trị nội dung, thuộc tính của các thẻ HTML</li>
+    <li><i>DOM CSS </i>: thay đổi các định dạng trong CSS của thẻ HTML</li>
+    <li><i>DOM Event</i> : gán các sự kiện vd như onClick(), onLoad() vào các thẻ HTML</li>
+    <li><i>DOM Listener</i> : lắng nghe các sự kiện tác động lên thẻ HTMl nào đó</li>
+    <li><i>DOM Navigation</i> : dùng để quản lý, thao tác với các thẻ HTML, thể hiện mối quan hệ cha-con của các thẻ HTMl</li>
+    <li><i>DOM Node,Nodelist</i> : thao tác với HTML thông qua đối tượng(object)</li>
+  </ol>
+</body>
+</html>
