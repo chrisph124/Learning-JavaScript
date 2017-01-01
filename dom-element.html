@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dom Element</title>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+<h3>DOM Element trong javascript</h3>
+<p>Cách truy xuất đến 1 thẻ HTML thông qua các thuộc tính như id, class, name, hay là tên thẻ HTML, hoặc cú pháp CSS Selector</p>
+<p>1 số dạng truy xuất : </p>
+<ol>
+  <li>Tìm thẻ HTML theo id</li>
+  <li>Tìm thẻ HTML theo class</li>
+  <li>Tìm thẻ HTML theo tên thẻ(tag)</li>
+  <li>Tìm thẻ HTML theo Selector</li>
+</ol>
+<p>Vì ID luôn là 1 và ko thể có 2 ID trùng tên nhau nên cú pháp getElemenById ko có s ở kế L</p>
+<h3>1. Tìm thẻ HTML theo id</h3>
+<p>Phương thức như sau : </p>
+<p>var varname = document.getElementById('id-name')</p>
+<p>1 ví dụ : </p>
+<input type="text" id="idname" value="getElementById">
+<script type="text/javascript">
+//Lấy id thẻ input
+var element = document.getElementById("idname");
+//Lấy giá trị trong thẻ input, ở đây giá trị nằm trong value
+document.write(element.value);
+</script>
+<h3>2. Tìm thẻ HTML theo tên của thẻ HTML</h3>
+<p>Các tag trong HTML rất rất nhiều, có 1 số ví dụ như thẻ p, div, a, ... và phương thức truy xuất tới các tags này là : </p>
+<p>var varname = document.getElementsByTagName('tag-name')</p>
+<p>Trong ví dụ này có đoạn code element[0].innerHTML vì trong 1 trang web có rất nhiều thẻ HTML trùng nhau(ví dụ 2 3 thẻ li)
+getElementsByTagName() sẽ trả về một mảng các object chứ không phải là một object nữa nên khi ta muốn thấy nội dung của thẻ li đầu tiên
+thì phải truyền 0 trong ngoặc vuông [ ] vào để lấy nội dung đầu tiên</p>
+<div id="tags"></div>
+<script type="text/javascript">
+  var element2 = document.getElementsByTagName('li');
+  document.getElementById('tags').innerHTML = element2[2].innerHTML;
+</script>
+<h3>3. Tìm thẻ HTML theo tên class</h3>
+<p>Phương thức đi tìm thẻ HTML có class : </p>
+<p>var varname = document.getElementsByClassName('class-name')</p>
+<div class="class-name"></div>
+<div id="p-name">Đây là ví dụ tìm thẻ HTML theo tên class</div>
+<script type="text/javascript">
+  var element3 = document.getElementsByClassName('class-name');
+  var element4 = document.getElementById('p-name');
+  document.write(element4[0].innerHTML = element3.innerHTML);
+</script>
+<h3>4. Tìm thẻ HTML theo cú pháp của Selector CSS</h3>
+<p>Khi chọn các thẻ HTML theo class thường sẽ trả về hàng loạt các kết quả, như vậy đôi khi sẽ có những kết quả mà ta không mong đợi.
+  Chính vì vậy javascript DOM có một phương thức kết hợp với CSS Selector để truy vấn có độ chính xác cao hơn.</p>
+  <p>Đây là phương thức truyền vào : </p>
+  <p>var varname = document.querySelectorAll('selector.css')</p>
+  <input type="text" value="thẻ 1" class="e41"/>
+  <input type="text" value="thẻ 2" class="e42"/>
+  <input type="text" value="thẻ 3" class="e43"/>
+  <script type="text/javascript">
+    var element5 = document.querySelectorAll("input.e42");
+    document.write("<p>Nội dung thẻ 2 là : " + element5[0].value + "</p>");
+  </script>
+</body>
+</html>
