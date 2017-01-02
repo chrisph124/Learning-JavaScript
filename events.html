@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  table th{padding:10px}
+  table td{padding:10px}
+  </style>
+</head>
+<body>
+  <h3>1. Sự kiện(Events) trong javascript :</h3>
+  <p>Sự kiện(Events) trong javascript là 1 hành động nào đó tác động lên đối tượng HTML </p>
+  <p>Ta có thể bắt được sự kiện này và có thể thực hiện những hành động nào đó để tác động lên đối tượng HTML</p>
+  <p>Mỗi một sự kiện có thể có nhiều hành động khách nhau. Ví dụ tạo 1 form đăng ký tài khoản mới
+    và sự kiện diễn ra là khi người dùng click vào button đăng kí thì xuất hiện hộp thoại điền thông tin đăng kí người dùng,
+    hay bắt 1 sự kiện khác là khi người dùng nhập không đúng theo form. Như vậy mỗi 1 event đều có thể thực hiện nhiều hành động khác nhau và bao nhiêu hành động
+     đều phụ thuộc vào từng chức năng cụ thể.</p>
+     <h3>2. Các Events thông dụng trong javascript :</h3>
+     <table border="1" width="700px">
+       <thead>
+         <tr>
+           <th>STT</th>
+           <th>Event Name</th>
+           <th>Description</th>
+         </tr>
+       </thead>
+       <tr>
+         <td>1</td>
+         <td>onclick</td>
+         <td>Xảy ra khi click vào thẻ HTML</td>
+       </tr>
+       <tr>
+         <td>2</td>
+         <td>ondbclick</td>
+         <td>Giống như trên nhưng double click vào thẻo HTML</td>
+       </tr>
+       <tr>
+         <td>3</td>
+         <td>onchange</td>
+         <td>Xảy ra khi value của tag HTML bị thay đổi, thường dùng khi đổi thẻ form input</td>
+       </tr>
+       <tr>
+         <td>4</td>
+         <td>onmouseover</td>
+         <td>Xảy ra khi con trỏ di chuyển vào tag HTML</td>
+       </tr>
+       <tr>
+         <td>5</td>
+         <td>onmouseout</td>
+         <td>Xảy ra khi con trỏ di chuyển ra khỏi tag HTML</td>
+       </tr>
+       <tr>
+         <td>6</td>
+         <td>onmouseenter</td>
+         <td>Y chang sự kiện onmouseover :v</td>
+       </tr>
+       <tr>
+         <td>7</td>
+         <td>onmouseleave</td>
+         <td>Y hệt onmouseout :3</td>
+       </tr>
+       <tr>
+         <td>8</td>
+         <td>onmousemove</td>
+         <td>Khi trỏ chuột di chuyển bên trong tag HTML</td>
+       </tr>
+       <tr>
+         <td>9</td>
+         <td>onkeydown</td>
+         <td>Xảy ra khi gõ 1 phím nào đó xuống 1 thẻ HTML</td>
+       </tr>
+       <tr>
+         <td>10</td>
+         <td>onkeyup</td>
+         <td>Giống onkeydown nhưng chỉ xảy ra sau khi gõ xuống 1 thẻ HTML và <b>nhả phím ra( kết thúc hành trình phím )</b></td>
+       </tr>
+       <tr>
+         <td>11</td>
+         <td>onkeypress</td>
+         <td>Có thể nó hơi giống onkeydown nhưng bản chất nó hơi đặc biệt 1 chút khi mà nó là 1 sự kết hợp của cả 2 onkeyup và onkeydown, sự kiện
+         chỉ xảy ra và được tính khi người dùng ấn 1 phím và nhả phím đó ra <b>nhưng phải hiện ra 1 character nào đó(number,letter,etc,...)</b>. Khi xài onkeypress và bấm 1 ký tự nào đó,
+       cả 3 event onkeydown, onkeyup, onkeypress đều đc kích hoạt vì bạn đã ấn 1 phím và nhả ra phím đó và 1 ký tự đã xuất hiện trên thẻ HTML</td>
+       </tr>
+       <tr>
+         <td>12</td>
+         <td>onblur</td>
+       </tr>
+       <tr>
+         <td>13</td>
+         <td>oncopy</td>
+       </tr>
+       <tr>
+         <td>14</td>
+         <td>oncut</td>
+       </tr>
+       <tr>
+         <td>15</td>
+         <td>onpaste</td>
+       </tr>
+       <tr>
+         <td>16</td>
+         <td>onload</td>
+         <td>Sự kiện xảy ra khi thẻ HTML bắt đầu chạy</td>
+       </tr>
+     </table>
+</body>
+</html>
