@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script language="javascript">
+function check()
+{
+    return false;
+}
+</script>
+<input type="text" onkeypress="return check()" />
+
+<h3>Ví dụ về true/false trong 1 form đăng ký :</h3>
+<script language="javascript">
+function validate(){
+  var user = document.getElementById('usr').value;
+  var pw = document.getElementById('pw').value;
+  var rpw = document.getElementById('re-pw').value;
+
+  if(user == ""){
+    alert("Please fill your name");
+  return false;
+  }
+
+  if(pw == ""){
+    alert("Type your password");
+  return false;
+  }
+
+  if(pw != rpw){
+    alert("Password does not match");
+  return false;
+  }
+  else{
+    alert("Thành công");
+  }
+  return true;
+}
+</script>
+<form method="post" action="">
+    Username: <input type="text" id="usr" name="usr" value="" placeholder="Fill your name"/></br>
+    Password: <input type="password" id="pw" name="pw" value="" placeholder="Type your password"/></br>
+    Re-password: <input type="password" id="re-pw" name="re-pw" value="" placeholder="Retype your password"/></br>
+    <input type="submit" value="Register" onclick="return validate()" />
+</form>
+</body>
+</html>
