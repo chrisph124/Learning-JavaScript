@@ -27,6 +27,11 @@
            <th>Description</th>
          </tr>
        </thead>
+       <thead>
+         <tr>
+           <th colspan="3">Thuộc tính sự kiện điều khiển chuột(mouse)</th>
+         </tr>
+       </thead>
        <tr>
          <td>1</td>
          <td>onclick</td>
@@ -39,34 +44,39 @@
        </tr>
        <tr>
          <td>3</td>
-         <td>onchange</td>
-         <td>Xảy ra khi value của tag HTML bị thay đổi, thường dùng khi đổi thẻ form input</td>
-       </tr>
-       <tr>
-         <td>4</td>
          <td>onmouseover</td>
          <td>Xảy ra khi con trỏ di chuyển vào tag HTML</td>
        </tr>
        <tr>
-         <td>5</td>
+         <td>4</td>
          <td>onmouseout</td>
          <td>Xảy ra khi con trỏ di chuyển ra khỏi tag HTML</td>
        </tr>
        <tr>
+         <td>5</td>
+         <td>onmousemove</td>
+         <td>Xảy ra khi con trỏ di chuyển trong tag HTML</td>
+       </tr>
+       <tr>
          <td>6</td>
-         <td>onmouseenter</td>
-         <td>Y chang sự kiện onmouseover :v</td>
+         <td>onscroll</td>
+         <td>Script chạy khi thanh cuộn (scrollbar) được cuộn.</td>
        </tr>
        <tr>
          <td>7</td>
-         <td>onmouseleave</td>
-         <td>Y hệt onmouseout :3</td>
+         <td>onmousewheel</td>
+         <td>Script chạy khi cuộn bánh xe con chuột</td>
        </tr>
        <tr>
          <td>8</td>
          <td>onmousemove</td>
          <td>Khi trỏ chuột di chuyển bên trong tag HTML</td>
        </tr>
+       <thead>
+         <tr>
+           <th colspan="3">Thuộc tính sự kiện bàn phím</th>
+         </tr>
+       </thead>
        <tr>
          <td>9</td>
          <td>onkeydown</td>
@@ -84,21 +94,31 @@
          chỉ xảy ra và được tính khi người dùng ấn 1 phím và nhả phím đó ra <b>nhưng phải hiện ra 1 character nào đó(number,letter,etc,...)</b>. Khi xài onkeypress và bấm 1 ký tự nào đó,
        cả 3 event onkeydown, onkeyup, onkeypress đều đc kích hoạt vì bạn đã ấn 1 phím và nhả ra phím đó và 1 ký tự đã xuất hiện trên thẻ HTML</td>
        </tr>
+       <thead>
+         <tr>
+           <th colspan="3">Thuộc tính sự kiện form</th>
+         </tr>
+       </thead>
        <tr>
          <td>12</td>
          <td>onblur</td>
+         <td>Sự kiện được kích hoạt khi chuyển chuột ra khỏi object mà không thay đổi giá trị của nó. Có 1 sự kiện khác cũng tương tự vậy là <b>onchange</b> nhưng khác biệt ở chỗ ong
+         change chỉ được kích hoạt khi di chuyển chuột ra khỏi object <b>nhưng có thay đổi giá trị của nó</b></td>
        </tr>
        <tr>
          <td>13</td>
-         <td>oncopy</td>
+         <td>onfocus</td>
+         <td>Script chạy khi người dùng click vào tag form( focus : lấy tiêu điểm vào tag )</td>
        </tr>
        <tr>
          <td>14</td>
-         <td>oncut</td>
+         <td>onsubmit</td>
+         <td>Được kích hoạt khi form được submit</td>
        </tr>
        <tr>
          <td>15</td>
-         <td>onpaste</td>
+         <td>onchange</td>
+         <td>Xảy ra khi value của tag HTML bị thay đổi, thường dùng khi đổi thẻ form input</td>
        </tr>
        <tr>
          <td>16</td>
