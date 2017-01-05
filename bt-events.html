@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bài tập ví dụ về Events trong JS</title>
+</head>
+<script type="text/javascript">
+  function on_load(){
+    alert("Đây là ví dụ đầu tiên : onload(chạy sự kiện khi thẻ HTML bắt đầu chạy)");
+  }
+</script>
+<body onload="on_load()">
+   <h3>Bài tập ví dụ về sự kiện onkeyup</h3>
+  <script type="text/javascript">
+    function show_result(){
+      var input = document.getElementById("message");
+      var div = document.getElementById("result");
+      div.innerHTML = input.value;
+    }
+  </script>
+<input type="text" id="message" value="" onkeyup="show_result()"/>
+<div id="result"></div>
+<!-- Trong sự kiện này sử dụng sự kiện onkeypress hoặc onkeydown thì sẽ có kết quả sai, lý do là những sự kiện này xảy ra
+ khi nhấn phím xuống nên nó sẽ lấy giá trị chưa được cập nhật. Còn sự kiện onkeyup xảy ra khi bạn nhả phím ra nên nó sẽ lấy được giá trị mới. -->
+<h3>Bài tập ví dụ về oncopy</h3>
+<script type="text/javascript">
+  function on_copy(){
+    alert("Không copy nha :D ")
+  }
+</script>
+<div oncopy="on_copy()">abcd efgh ijklm</div>
+
+<h3>Bài tập tính tổng</h3>
+<script type="text/javascript">
+  function tinh_tong(){
+    var input1 = document.getElementById('so1');
+    var input2 = document.getElementById('so2');
+    var kqua = document.getElementById('kqua');
+    var tong = parseInt(input1.value) + parseInt(input2.value);
+    // Gán giá trị vào ô thứ ba
+    // Phải kiểm tra tổng hai số này có bị lỗi hay không
+    if(!isNaN(tong)){
+      kqua.innerHTML = tong;
+    }
+  }
+</script>
+<input type="text" id="so1" value="" onkeyup="tinh_tong()"/>
+<input type="text" id="so2" value="" onkeyup="tinh_tong()"/>
+<div><h4>Kết quả là : </h4><span id="kqua"></span></div>
+</body>
+</html>
