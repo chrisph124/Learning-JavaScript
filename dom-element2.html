@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM HTML trong Javascript</title>
+</head>
+<body>
+  <h3>1. Thay đổi và lấy nội dung bên trong thẻ HTML</h3>
+  <p>Có cú pháp vd như sau : </p>
+  <script type="text/javascript">
+  function change_text(){
+    //Lấy nội dung bên trong thẻ
+      var text = document.getElementById('text').innerHTML;
+    //Thay đổi nội dung bên trong thẻ
+    var text = document.getElementById('text').innerHTML = "<i>Thay đổi rồi</i>";
+  }
+  </script>
+  <div id="text" >This is content</div><br/>
+  <input type="button" id="button" value="Click to change conent" onclick="change_text()"/>
+  <br/>
+  <h3>Lấy giá trị thuộc tính thẻ và thay đổi giá trị thuộc tính</h3>
+  <script type="text/javascript">
+  function change_att(){
+
+    //var value = document.getElementById("element").attributeName;
+      var input = document.getElementById("input");
+      if(input.type== "button"){
+        input.type = "text"
+        input.value = "This is Text"
+
+      }else{
+        input.type = "button"
+        input.value = "This is Button"
+      }
+  }
+  </script>
+  <input type="text" id="input" value="This is Text" />
+  <input type="button" value="Click me to see what next!" onclick="change_att()"/>
+</body>
+</html>
