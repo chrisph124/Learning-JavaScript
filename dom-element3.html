@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dom CSS trong Javascript</title>
+</head>
+<style media="screen">
+  #div{
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    color : white;
+    margin-top: 20px;
+  }
+  #p{
+    color: red;
+  }
+</style>
+<script type="text/javascript">
+  function change_color(){
+    var color = document.getElementById("div");
+    var text = document.getElementById('btn');
+    if(color.style.backgroundColor == "red"){
+      color.style.backgroundColor = "yellow"
+      text.innerHTML = "Click to change color box from <b style='color:yellow'>yellow</b> to <b style='color:green'>green</b>"
+    } else if(color.style.backgroundColor == "yellow"){
+      color.style.backgroundColor = "green"
+      text.innerHTML = "Click to change color box from <b style='color:green'>green</b> to <b style='color:blue'>blue</b>"
+    }else if(color.style.backgroundColor == "green"){
+      color.style.backgroundColor = "blue"
+      text.innerHTML = "Click to change color box from <b style='color:blue'>blue</b> to <b style='color:red'>red</b>"
+    }else{
+      color.style.backgroundColor = "red"
+      text.innerHTML = "Click to change color box from <b style='color:red'>red</b> to <b style='color:yellow'>yellow</b>"
+    }
+  }
+  function alert_error(){
+    var username = document.getElementById('txtusername');
+    var password = document.getElementById('txtpassword');
+    var p = document.getElementById('p');
+    if(username.value == "" || password.value == ""){
+      p.innerHTML = "Thông tin không được bỏ trống"
+    }else{
+      p.innerHTML = "Đăng ký thành công!"
+      p.style.color = "green"
+    }
+  }
+</script>
+<body>
+  <p>CSS bản chất cũng là 1 thuộc tính thẻ của HTML nhưng không thể sử dụng DOM HTML để thay đổi được mà phải thông qua 1 đối tượng đặc biệt khác là <b>Style</b></p>
+  <p>Style chứa tất cả các thuộc tính của CSS và rất dễ thao tác với chúng bằng cú pháp riêng, có 2 thao tác với Style là thiết lập CSS và lấy giá trị CSS.</p>
+  <p>Cú pháp ví dụ : </p>
+  <p><i>document.getElementById('IDname').style.cssName = "cssAttribute"</i></p>
+  <p>Ví dụ viết form button thay đổi màu của thẻ DIV :</p>
+<button id="btn" onclick="change_color()">Click to change color box</button>
+<div id="div"><b>BOX</b></div>
+<br/><hr/><br/>
+<p>Viết ví dụ tạo form báo lỗi khi bỏ trống input:</p>
+<form action="" method="post">
+  Username: <input type="text" id="txtusername" placeholder="Điền tên đăng nhập" />
+  Password: <input type="password" id="txtpassword" placeholder="Điền mật khẩu">
+  <input type="button" value="Đăng ký" onclick="alert_error()">
+  <p id="p"></p>
+</form>
+</body>
+</html>
