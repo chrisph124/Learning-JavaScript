@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thêm sự kiện(event) bằng javascript</title>
+</head>
+<body>
+  <h3>1.Thêm sự kiện cho một thẻ HTML bằng javascript</h3>
+  <p>Cú pháp như sau :</p>
+  <p>elementObject.eventName = function() { ... };</p>
+  <p>Trong đó:<br/>
+    - elementObject là đối tượng HTML mà chúng ta sử dụng DOM để lấy.<br/>
+    - eventName là tên của event như onclick, onchange, ...
+</p>
+<input type="button" id="btn" value="click Me!" />
+<script type="text/javascript">
+  var button = document.getElementById('btn');
+  button.onclick = function(){alert("Hello")}
+</script>
+<br/>
+<hr/>
+<br/>
+<h3>2.Thêm sự kiện cho nhiều thẻ HTML bằng javascript</h3>
+<p>Ở trên mình sử dụng phương thức document.getElementById() nên kết quả trả về chỉ có 1 đối tượng và vì thế có thể gắn trực tiếp varName.eventName = function(){}</p>
+<p>Nhưng nếu sử dụng truy vấn <b>DOM theo selector</b> thì kết quả trả về sẽ là 1 mảng các đối tượng và lúc này bạn phải <i>sử dụng vòng lặp để thiết lập sự kiện.</i></p>
+<p>Cú pháp như sau :</p>
+<p><i><u>Lấy đối tượng html, bạn có thể sử dụng các DOM Element khác để lấy</u></i></p>
+<p>var varName = document.getElementsByTagName('element');</p>
+<p><i><u>Lặp qua từng phần tử trong kết quả và gán sự kiện</u></i></p>
+<p>for(var i = 0; i < varName.length; i++){</p>
+<p>varName[i].eventName = function(){</p>
+<p>Do Something</p>
+<p>};</p>
+<p>}</p>
+<input type="button" class="btn" value="Click Me!"/>
+<input type="button" class="btn" value="Click Me More!"/>
+<input type="button" class="btn" value="Click Me Harder!"/>
+<script type="text/javascript">
+  var button = document.getElementsByClassName('btn');
+  for(var i = 0; i < button.length; i++){
+    button[i].onclick = function(){
+      alert("Meow meow")
+    };
+  }
+</script>
+</body>
+</html>
