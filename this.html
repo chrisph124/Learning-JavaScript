@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>This trong Javascript</title>
+  <script type="text/javascript">
+    var button = document.getElementById('btn');
+    button.addEventListener('click',function(){
+      this.innerHTML = alert("Baby click me one more time <3");
+    })
+    function hit(data){
+      alert(data.value);
+    };
+  </script>
+<body>
+  <h3>1. This trong Javascript là gì?</h3>
+  <p>Đối tượng this chính là đối tượng hiện tại đang được sử dụng hoặc đang truy cập tới.
+    Ví dụ khi bạn viết một hành động cho sự kiện click thì nếu trong hành động đó có sử dụng this lúc này this chính là thẻ HTML mà ta click. </p>
+    <input type="button" id="btn" value="Click Me!" />
+    <input type="button" id ="btn2" value="Click Me Harder!" onclick="hit(this)">
+</body>
+</html>
