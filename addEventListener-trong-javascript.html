@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hàm addEventListener() trong Javascript</title>
+</head>
+<body>
+  <p>Có thể sử dụng cách thêm sự kiện đã học nhưng sẽ không chuyên nghiệp và hay bằng cách sử dụng hàm addEventListener(). Từ hàm này bạn có thể liên tưởng qua Events trong jQuery có cách xử lý y chang như vậy</p>
+<h3>1.Sử dụng hàm addEventListener() trong Javascript</h3>
+<p>Khác với phương thức thêm 1 sự kiện thông thường, addEventListerner có cú pháp là :</p>
+<p>elementObject.addEventListener('eventName',function(e){...});</p>
+<p>
+  -  eventName là tên của sự kiện bỏ đi chữ on, ví dụ click, change, ...<br/>
+  -  function ở tham số thứ hai chính là hàm sẽ được chạy khi sự kiện eventName được kích hoạt
+</p>
+<input type="text" id="txt-val" value="" />
+        <div id="result"></div>
+        <script language="javascript">
+                    // Lấy đối tượng
+                    var input = document.getElementById("txt-val");
+                    // Thêm sự kiện cho đối tượng
+                    input.addEventListener('keyup', function(){
+                        // Gán giá trị vào div
+                        document.getElementById('result').innerHTML = input.value;
+                        if(input.value.length>5){
+                          alert("Bạn đã nhập nhiều hơn "+input.value.length+" ký tự");
+                          return false;
+                        }
+                    });
+                </script>
+<h3>2.Thêm sự kiện cho đối tượng Window</h3>
+<p>Phóng to/thu nhỏ trình duyệt để thấy kết quả</p>
+<div id="zoom"></div>
+<script type="text/javascript">
+  var zoom = document.getElementById('zoom');
+  window.addEventListener('resize',function(){
+    zoom.innerHTML = "<b><i>Bạn vừa thay đổi kích thước trình duyệt</b></i>";
+  })
+</script>
+<h3>3.Truyền tham số vào Event trong hàm addEventListener()</h3>
+<p>Nếu muốn truyền 1 tham số vào thì bắt buộc phải tạo 1 function khác rồi gọi vào từ addEventListener()</p>
+<p><i>Lấy đối tượng</i><br/>
+var button = document.getElementById("btn");<br/>
+<i>Thêm sự kiện cho đối tượng</i><br/>
+button.addEventListener('click', function(){<br/>
+    do_something(2, 3);<br/>
+});<br/>
+    function do_something(a, b){<br/>
+  alert( a + b);<br/>
+}</p>
+<input type="text" id="no1" value="" />
+<input type="text" id="no2" value="" />
+<input type="button" id="btn" value="Kết quả">
+<div id="kqua"></div>
+<script type="text/javascript">
+  var btn = document.getElementById('btn');
+  btn.addEventListener('click',function(){
+    tong();
+  })
+  function tong(a,b){
+    var no1 = document.getElementById('no1').value;
+    var no2 = document.getElementById('no2').value;
+    var sum = parseInt(no1) + parseInt(no2);
+    var kqua = document.getElementById('kqua');
+    kqua.innerHTML = sum;
+  }
+</script>
+</body>
+</html>
