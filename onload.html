@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sự kiện onload trong Javascript</title>
+</head>
+<body>
+  <p>onload là 1 sự kiện của javascript được sử dụng khá nhiều. Trong framework jQuery có cú pháp $(document).ready thì bản chất của nó chính là sự kiện onload trong javascript.</p>
+  <h3>1/ Quá trình biên dịch code Javascript</h3>
+  <p>Javascript giống như những ngôn ngữ lập trình khác, chạy biên dịch từ trái qua phải và từ trên xuống dưới. Vì thế khi sử dụng 1 hàm mà phía trên nó không tồn tại thì sẽ bị báo lỗi ngay.
+  Và lúc này ta dùng sự kiện onload của javascript.</p>
+  <p>Ví dụ : </p>
+  <p> var name = do_function();</p>
+  <p>function do_function(){ //return TRUE/FALSE; }</p>
+  <p>Như vậy sẽ là sai vì hàm do_function() trên var chưa được định nghĩa. Nhưng nếu đảo ngược lại đoạn code định nghĩa hàm do_function nằm phía trên biến var thì sẽ đúng vì sau khi
+  hàm do_function được định nghĩa thì mới gán vào 1 variable để chạy.</p>
+  <p><i>Một lưu ý quan trọng nữa khi các bạn gán một hàm nào đó cho một sự kiện nào đó trong HTML thì cũng phải tuân theo quy luật trên, nghĩa là nếu bạn gán một hàm mà phía trên thẻ HTML đó không có thì nó sẽ thông báo lỗi là undefined.</i></p>
+<h3>2/ Sự kiện onload trong Javascript</h3>
+<p>Sự kiện onload có ý nghĩa rằng khi trình duyệt đã load xong mọi thứ (image, js, css) thì những đoạn code nằm bên trong đó mới được chạy. Có một lưu ý rằng nếu bạn sử dụng onload cho một thẻ HTML nào đó thì nó sẽ có tác dụng với thẻ HTML đó thôi nhưng nếu bạn dùng cho window thì nó sẽ có tác dụng cho toàn trang.</p>
+<p>Có 1 ví dụ sau :</p>
+<p>alert(1);
+<br/>
+window.onload = function()
+<br/>{<br/>
+    alert(3);<br/>
+};<br/>
+
+alert(2);</p>
+<script type="text/javascript">
+  alert(1);
+  window.onload = function(){alert(3);};
+  alert(2);
+</script>
+<p>Mặc dù đoạn code alert(3) nằm ở vị trí thứ hai nhưng nó lại xuất hiện cuối cùng. Cơ bản như đã nói ở trên, onload chỉ chạy khi rình duyệt đã load xong mọi thứ (image, js, css)</p>
+<h4>Như vậy sự kiện onload trong Javascript được sử dụng khá nhiều bởi nó được xử lý sau cùng nên sẽ tránh được khá nhiều lỗi undefined, tuy nhiên không phải lúc nào sử dụng nó đều tốt.</h4>
+</body>
+</html>
