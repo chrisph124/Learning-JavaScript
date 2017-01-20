@@ -6,8 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hàm addEventListener() trong Javascript</title>
 </head>
+<style media="screen">
+  h1{
+    text-align: center;
+  }
+</style>
 <body>
-  <p>Có thể sử dụng cách thêm sự kiện đã học nhưng sẽ không chuyên nghiệp và hay bằng cách sử dụng hàm addEventListener(). Từ hàm này bạn có thể liên tưởng qua Events trong jQuery có cách xử lý y chang như vậy</p>
+  <h1>Hàm addEventListener() trong Javascript</h1>
+  <h3>Có thể sử dụng cách thêm sự kiện đã học nhưng sẽ không chuyên nghiệp và hay bằng cách sử dụng hàm addEventListener().</h3>
+  <h3>Từ hàm này bạn có thể liên tưởng qua Events trong jQuery có cách xử lý y chang như vậy</h3>
 <h3>1.Sử dụng hàm addEventListener() trong Javascript</h3>
 <p>Khác với phương thức thêm 1 sự kiện thông thường, addEventListerner có cú pháp là :</p>
 <p>elementObject.addEventListener('eventName',function(e){...});</p>
@@ -49,11 +56,11 @@ button.addEventListener('click', function(){<br/>
 });<br/>
     function do_something(a, b){<br/>
   alert( a + b);<br/>
-}</p>
+}</p><div>
 <input type="text" id="no1" value="" />
 <input type="text" id="no2" value="" />
-<input type="button" id="btn" value="Kết quả">
-<div id="kqua"></div>
+<input type="button" id="btn" value="Kết quả"><input type="text" id="kqua" placeholder="Kết quả" readonly ></input></div>
+
 <script type="text/javascript">
   var btn = document.getElementById('btn');
   btn.addEventListener('click',function(){
@@ -64,8 +71,29 @@ button.addEventListener('click', function(){<br/>
     var no2 = document.getElementById('no2').value;
     var sum = parseInt(no1) + parseInt(no2);
     var kqua = document.getElementById('kqua');
-    kqua.innerHTML = sum;
+    kqua.value = sum;
   }
 </script>
+<br/><hr/><br/>
+  <h1>Hàm removeEventListener() trong Javascript</h1>
+  <h3>Nếu như hàm addEventListener() dùng để thêm một hành động cho một sự kiện thì hàm removeEventListener() lại có tác dụng ngược lại, nó sẽ xóa đi một hành động đã được gán cho một sự kiện. </h3>
+<p>Ví dụ bạn gán hành động validate form cho sự kiện submit của form, sau đó bạn không muốn validate nữa thì bạn sẽ có hai giải pháp.
+   Một là bạn sẽ phải xóa đi đoạn code validate đó và hai là bạn chỉ cần sử dụng hàm removeEventListener() để xóa hành động validate.</p>
+<p>Cú pháp: object.removeEventListener("click", function);</p>
+<p>Ví dụ :</p>
+<div id='div1' style="background-color:red; height:200px; width:200px; text-align:center;line-height:200px;color:white;font-weight:bold"></div>
+<input type="button" id="btn1" value="Click to stop running random number" onclick="stop()">
+<script type="text/javascript">
+document.getElementsByTagName('html')[0].addEventListener('mousemove',math_random);
+  function math_random(){
+    var div1 = document.getElementById('div1');
+    div1.innerHTML = Math.random();
+  }
+document.getElementById('btn1').addEventListener('click',function(){
+  document.getElementsByTagName('html')[0].removeEventListener('mousemove',math_random);
+});
+</script>
+<p>hàm removeEventListener() dùng để xóa một hành động ra khỏi một sự kiện nào đó và hành động đó
+  <b>phải được định nghĩa bằng một hàm</b> chứ không gán trực tiếp vào. </p>
 </body>
 </html>
