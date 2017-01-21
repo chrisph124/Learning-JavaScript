@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Biến toàn cục và biến cục bộ trong Javascript</title>
+</head>
+<body>
+  <h3>1/ Biến cục bộ trong Javascript</h3>
+<p>Biến cục bộ(local) là 1 biến bạn tạo ra trong 1 hàm cụ thể nào đó và biến này chỉ sử dụng được trong hàm này.</p>
+<p>Ví dụ:</p>
+<p>function add_comment() <br/>
+{<br/>
+    var comment = "Nội dung comment"; <br/>
+    <i>// Đoạn code này đúng vì biến comment đã tồn tại</i><br/>
+    alert(comment);<br/>
+}<br/>
+
+<i>// Đoạn code này sẽ sai vì không tồn tại biến comment</i><br/>
+alert(comment);</p>
+<br/><hr/><br/>
+<h3>2/ Biến toàn cục trong Javascript</h3>
+<p>Khác với biến cục bộ(local), biến toàn cục(global) là 1 biến được đặt bên ngoài, không thuộc riêng 1 hàm nào cả và nó được sử dụng chung cho tất cả các hàm được tạo ra.</p>
+<p>Ví dụ:</p>
+<p><i>// Biến toàn cục</i><br/>
+var comment = "Nội dung comment bên ngoài";<br/>
+<i>// Hàm có sử dụng biến toàn cục</i><br/>
+function add_comment()<br/>
+{<br/>
+    alert(comment);<br/>
+}<br/>
+ <i>// In biến toàn cục</i><br/>
+alert(comment);</p>
+<br/><hr/><br/>
+<h3>3/ Một số ví dụ về global và local</h3>
+<p>Có rất nhiều điều cần lưu ý về cách đặt biến global và local nên cần phải xem xét kĩ trước khi khởi tạo biến.</p>
+<p>Ví dụ:</p>
+<p>Nếu trong hàm có sử dụng từ khóa <b>var</b> để tạo một biến và tên của biến đó đã tồn tại ở bên ngoài (toàn cục)
+   thì lúc này bên trong hàm nó sẽ hiểu là <b>đang sử dụng biến cục bộ</b> chứ không ảnh hưởng gì biến bên ngoài cả.</p>
+  <p>
+    <i>// Biến toàn cục</i><br/>
+         var comment = "Nội dung comment toàn cục";<br/>
+         <i>// Hàm có sử dụng biến toàn cục</i><br/>
+         function add_comment()<br/>
+         {<br/>
+            var comment = "Nội dung comment cục bộ";<br/>
+            alert(comment);<br/>
+         }<br/>
+         <i>// Gọi fuction comment</i><br/>
+         add_comment();<br/>
+         <i>// In biến toàn cục</i><br/>
+         alert(comment);<br/>
+  </p>
+  <script type="text/javascript">
+    var comment = "Đây là var global";
+    function add_comment(){
+      var comment = "Đây là var local";
+      alert(comment);
+    };
+    add_comment();
+    alert(comment);
+  </script>
+  <p>Ví dụ 2:</p>
+  <p>Nếu bạn <b>không sử dụng từ khóa var</b> để tạo tên biến trong hàm
+    thì nó sẽ <b>sử dụng biến toàn cục(global)</b> nên mọi thay đổi của biến đó trong hàm sẽ bị ảnh hưởng ra ngoài hàm.</p>
+    <p>
+      <i>// Biến toàn cục</i><br/>
+          var comment = "Nội dung comment trước khi thay đổi";<br/>
+
+          <i>// Hàm có sử dụng biến toàn cục</i><br/>
+          function add_comment()<br/>
+          {<br/>
+             comment = "Nội dung comment đa bị thay đổi";<br/>
+             alert(comment);<br/>
+          }<br/>
+
+          <i>// Gọi fuction comment</i><br/>
+          add_comment();<br/>
+
+          <i>// In biến toàn cục</i><br/>
+          alert(comment);</p>
+    <script type="text/javascript">
+      var comment1 = "Nội dung chưa bị thay đổi";
+      function add_comment1(){
+        comment1 = "Nội dung đã bị thay đổi";
+        alert(comment1);
+      };
+      add_comment1();
+      alert(comment1);
+    </script>
+</body>
+</html>
