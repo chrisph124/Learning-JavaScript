@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lệnh break-continue trong Javascript</title>
+</head>
+<body>
+<h3>1/ Lệnh Break</h3>
+<p>Lệnh break có tác dụng dừng vòng lặp 1 cách đột ngột cho dùng điều kiện của vòng lặp <b>vẫn đang đúng</b>. Nói cách khác là nó thoát khỏi vòng lặp bất chấp và không quan tâm điều kiện vòng lặp là gì :))</p>
+<p>Lệnh có thể sử dụng với mọi vòng lặp như for, while, do-while, each,...</p>
+<p>Ví dụ:</p>
+<script>
+  for (var i = 0; i <= 10; i++) {
+    document.write(i + "-");
+    if(i == 5){
+      document.write("Vòng lặp bị dừng");
+      break;
+    }
+  }
+</script>
+<p>Ví dụ 2:</p>
+<script type="text/javascript">
+  var a = 1;
+  while(a < 1000){
+    document.write(a + "-");
+    if(a % 9 == 0){
+      document.write("Vòng lặp bị dừng");
+      break;
+    }
+    a++;
+  }
+</script>
+<br/><hr/><br/>
+<h3>2/ Lệnh Continue</h3>
+<p>Khác với Break, lệnh Continue có tác dụng bỏ qua 1 bước lặp nào đó, nghĩa là khi chạy vòng lặp mà gặp lệnh continue thì tất cả các lệnh đứng sau continue đều không thực hiện
+ mà sẽ nhảy hẳn qua 1 vòng lặp mới( bỏ qua và chạy tiếp vòng mới còn break là dừng hẳn )</p>
+ <p>Ví dụ 1:</p>
+ <script type="text/javascript">
+   for (var i = 0; i <= 10; i++) {
+     if(i == 5){
+       continue;
+     }
+     document.write( i + " - " );
+   }
+ </script>
+ <p>Ví dụ 2:</p>
+ <script type="text/javascript">
+   var x = 1;
+   while(x <= 100){
+     if( x%9 == 0 ){
+       x++;
+       continue;
+     }
+     document.write(x + ' - ');
+     x++;
+   }
+ </script>
+ <p><i>Lệnh continue và lệnh break trong javascript giúp cho chương trình có thể hoạt động một cách hiệu quả hơn vì thế nó rất hay được sử dụng.
+   Tuy nhiên về mức độ thường xuyên thì lệnh break được sử dụng nhiều hơn lệnh continue.</i></p>
+</body>
+</html>
