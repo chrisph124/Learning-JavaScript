@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM trong Javascript</title>
+</head>
+<body>
+  <h3>1/ BOM là gì ?</h3>
+  <p>BOM là chữ viết tắt của <b>B</b>rower <b>O</b>bject <b>M</b>odel, hay còn gọi là các đối tượng liên quan đến trình duyệt(browser).
+  Mỗi browser sẽ có 1 đối tượng khác nhau nên không có 1 chuẩn chung nào cả, tuy nhiên để có tính thống nhất giữa các trình duyệt nên đã đặt ra 1 số quy ước sau:</p>
+  <ul>
+    <li>window</li>
+    <li>screen</li>
+    <li>location</li>
+    <li>history</li>
+    <li>navigatior</li>
+    <li>popup</li>
+    <li>timing</li>
+    <li>cookies</li>
+  </ul>
+<p>Các đối tượng BOM trên có sự phân cấp lẫn nhau, trong dó window là cấp cao nhất vì nó đại diện cho browser.</p>
+<p>Ví dụ bạn muốn truy cập đến đối tượng <i>document</i>, thì cú pháp là <b>window.document</b>. Tuy nhiên thì vẫn được phép viết tắt là document.
+Ví dụ khác như truy cập đến cookie thì cú pháp là <b>window.document.cookie</b>(viết tắt là : document.cookie),...</p>
+</body>
+</html>
