@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Nodes</title>
+</head>
+
+<body>
+    <h4>DOM Nodes là bản chất của các đối tượng trả về khi sử dụng DOM Element để truy vấn.</h4>
+    <h3>1/ DOM Node - document.createElement()</h3>
+    <p>Khi bạn sử dụng Dom Element để truy xuất tới 1 đối tượng HTML nào đó thì kết quả trả về là 1 object và object gọi là Dom Nodes</p>
+    <p>Ví dụ: </p>
+    <p>var varName = document.getElementById("id-name");</p>
+    <p>Với cách này bắt buộc phải tồn tại 1 đối tượng HTML đang hiển thị trên website thì mới khởi tạo thành công.</p>
+    <p>Vậy nếu muốn tạo 1 Node mới hoàn toàn và không liên quan tới các thẻ HTML hiện tại đang hiển thị trên website thì chúng ta gọi phương thức <b>document.createElement()</b> với tham số truyền vào là tên của 1 thẻ HTML cần tạo. Sau khi tạo xong chúng
+        ta có thể sử dụng các phương thức, thuộc tính của DOM HTML, DOM CSS lên nó 1 các bình thường.</p>
+    <p>var varName = document.createElement('p');</p>
+    <script type="text/javascript">
+        // Tạo 1 thẻ mới
+        var i = document.createElement("i");
+        // Thêm nội dung HTML vào thẻ
+        i.innerHTML = "Đây là 1 thẻ i được tạo bằng phương thức DOM Node";
+        // Đưa thẻ p vào trong thẻ body
+        document.getElementsByTagName('body')[0].appendChild(i);
+    </script>
+    <h3>2/ DOM Node - document.createTextNode()</h3>
+    <p>Text node là một node đặc biệt, nó không phải là một thẻ HTML thông thường mà chỉ là một chuỗi (string) nên thông thường chúng ta sử dụng nó để thay thế cách gán thông thường node.innerHTML.</p>
+    <script type="text/javascript">
+        var p = document.createElement('p');
+        var text = document.createTextNode("Text Node dùng để thay thế innerHTML");
+        p.appendChild(text);
+        document.getElementsByTagName('body')[0].appendChild(p);
+    </script>
+    <h3>3/ DOM Node - các phương thức khác</h3>
+    <h4>Phương thức appendChild()</h4>
+    <p>Dùng để thêm (bổ sung) vào vị trí cuối cùng của đối tượng một thẻ HTML nào đó.</p>
+    <h4>Phương thức insertBefore()</h4>
+    <p>Được dùng để thêm một Node vào đằng trước một node con nào đó. Phương thức này có hai tham số truyền vào insertBefore(node_insert, node_child), trong đó:</p>
+    <p><b>node_insert</b> là node bạn muốn thêm vào</p>
+    <p><b>node_child</b> là node con mà bạn muốn thêm vào đằng trước nó.</p>
+    <p>Ví dụ :</p>
+    <ul id="ul">
+        <li>Li thứ 1</li>
+        <li>Li thứ 2</li>
+        <li>Li thứ 4</li>
+        <li>Li thứ 5</li>
+    </ul>
+    <button id="btn">Click để thêm Li thứ 3 vào.</button>
+    <script type="text/javascript">
+        //Lấy button
+        var btn = document.getElementById('btn');
+        // Thêm sự kiện cho button
+        btn.addEventListener("click", function() {
+            // Tạo thẻ li
+            var li = document.createElement('li');
+            // Thêm nội dung cho thẻ li
+            li.innerHTML = "Li thứ 3";
+            // Lấy ul ( vì mình cần thêm nội dung vào trong thẻ này )
+            var ul = document.getElementById('ul');
+            // Lấy thẻ mình muốn insert nội dung vào phía trước nó
+            var li_child = document.getElementsByTagName('li')[2];
+            // Chạy insertBefore
+            // ul.insertBefore(thẻ được thêm, thẻ muốn thêm phía trước nó)
+            ul.insertBefore(li, li_child);
+        });
+    </script>
+    <h3>4/ Phương thức removeChild()</h3>
+    <p>Dùng để xóa 1 node con ra khỏi node hiện tại</p>
+    <p>Ví dụ:</p>
+    <button id="btn-rm">Click để xóa Li thứ 1</button>
+    <script type="text/javascript">
+        //Lấy button
+        var rm = document.getElementById('btn-rm');
+        // Thêm sự kiện cho button
+        rm.addEventListener("click", function() {
+            //Lấy thẻ cần xóa
+            var li_remove = document.getElementsByTagName('li')[0];
+            // Chạy removeChild(), lấy ID là ul vì mình xóa 1 phần tử bên trong nó.
+            document.getElementById('ul').removeChild(li_remove);
+        });
+    </script>
+    <h3>5/ Phương thức replaceChild()</h3>
+    <p>Dùng để replace (thay thế) một node con nào đó bằng một node khác mới hoàn toàn.</p>
+    <p>Ví dụ:</p>
+    <button id="btnReplace">Click để thay đổi nội dung Li thứ 2</button>
+    <script type="text/javascript">
+        // Lấy button
+        var btnReplace = document.getElementById('btnReplace');
+        // Thêm sự kiện cho button
+        btnReplace.addEventListener("click", function() {
+            // Tạo 1 thẻ mới
+            var new_li = document.createElement('li');
+            // Thêm nội dung cho thẻ vừa tạo
+            new_li.innerHTML = "Đây là thẻ Li vừa được thay đổi nội dung";
+            // Lấy thẻ cần Replace
+            var replace = document.getElementsByTagName('li')[1];
+            // Chạy Replace
+            document.getElementById('ul').replaceChild(new_li, replace);
+        });
+    </script>
+    <h4><i>Việc sử dụng thành thạo các phương thức xử lý DOM Node rất quan trọng khi bạn làm việc với các thẻ HTML bằng Javascript. Nếu bạn sử dụng một JS Library như jQuery thì điều này khá đơn giản bởi vì nó đã viết ra những hàm cho chúng ta sử dụng sẵn nên hầu hết các lập trình viên đều không quan tâm đến những kiến thức thuần javascript như thế này.</i></h4>
+</body>
+
+</html>
