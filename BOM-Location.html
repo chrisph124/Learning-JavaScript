@@ -4,85 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BOM - Location điều hướng và xử lý URL trong Javascript</title>
+  <title>Document</title>
 </head>
 <body>
-  <h3>1/ Location trong Javascript</h3>
-  <p>Location là thuộc tính của đối tượng <i>window</i> nên khi sử dụng phải thông qua đối tượng <b>window</b>.</p>
-  <p>Cú pháp là : <b>window.location</b></p>
-  <p><i>đối tượng window luôn tồn tại trong các trình duyệt hiện nay nên chỉ sử dụng mà không cần phải khai báo.</i></p>
-  <h3>2/ Các phương thức của Location</h3>
-  <p>Có 3 phương thức chính đó là :</p>
-  <ul>
-    <li>reload()</li>
-    <li>replace()</li>
-    <li>assign()</li>
-  </ul>
-  <b>window.location.reload(url) - tải lại trang web</b>
-  <p>Thông thường khi muốn tải lại 1 trang web ta nhấn nút F5 hoặc click phải chuột và chọn refresh page, tuy nhiên vẫn có thể
-  refresh bằng javascript bằng cách sử dụng phương thức reload()</p>
-  <p>Ví dụ:</p>
-  <button onclick="refreshPage()">Refresh</button>
-  <script type="text/javascript">
-    function refreshPage(){
-      window.location.reload();
-    };
-  </script>
-  <p><b>window.location.replace(urr) - ghi đè trang web</b></p>
-  <p>Phương thức này ít khi được sử dụng mà thay vào đó ta thường dùng cú pháp : <b>window.location.href="url"</b>.</p>
-  <p>Tuy nhiên  2 cách này vẫn có sự khác biệt rõ rệt :</p>
-  <ol type="round">
-    <li>Đối với <b>replace()</b> thì trình duyệt sẽ <b>KHÔNG</b> đưa vào lịch sử </li>
-    <li>Đối với <b>location.href</b> thì trình duyệt sẽ <b>CÓ</b> đưa vào lịch sử</li>
-  </ol>
-  <p>Ví dụ:</p>
-  <button onClick="replacePage()">Replace()</button>
-  <button onClick="locationHref()">Location.href</button>
-  <p><i>Khi bấm 1 trong 2 button và hiển thị ra 1 trang khác, bạn bấm nút back( quay trở lại trang trước ), lúc này sẽ thấy sự khác nhau và ý nghĩa của chúng</i></p>
-  <script type="text/javascript">
-    function replacePage(){
-      window.location.replace("http://fb.com");
-    };
-    function locationHref(){
-      window.location.href = "http://kenh14.vn";
-    };
-  </script>
-  <p><b>window.location.assign(url)</b> - Load 1 trang mới</p>
-  <p>Về công dụng thì vẫn không khác gì 2 cách trên nhưng có đặc điểm giống <b>location.href</b>
-  <i>(Có đưa vào history của trình duyệt)</i></p>
-  <p>Ví dụ:</p>
-  <button onClick="assignPage()">Click để link đến zing.vn</button>
-  <script type="text/javascript">
-    function assignPage(){
-      window.location.assign("http://zing.vn");
-    };
-  </script>
-  <h3>3/ Các thuộc tính của Location</h3>
-  <p>Ngoài các phương thức trên thì bạn có thể sử dụng Location để xử lý các thành phần liên quan đến URL như lấy phần <b>hash, search</b></p>
-  <p>Đây là danh sách các đối tượng <u>location</u> này :</p>
-  <ol type="square">
-    <li><b>hash: </b> thiết lập hoặc lấy phần sau dấu # của URL</li>
-    <li><b>hostname: </b>thiết lập hoặc lấy phần <i><b>hostname</b></i> của URL </li>
-    <li><b>host: </b>thiết lập hoặc lấy phần <i><b>hostname</b></i> và <b><i>port number</i></b> của URL</li>
-    <li><b>href: </b> thiết lập hoặc lấy URL</li>
-    <li><b>origin: </b>trả về <i>protocal, hostname và port number</i> của URL</li>
-    <li><b>pathname: </b>thiết lập hoặc lấy <i>pathname</i> của URL</li>
-    <li><b>port: </b>thiết lập hoặc lấy <i>port</i> của URL</li>
-    <li><b>search : </b>lấy phần query <i>string</i> của URL</li>
-  </ol>
-  <p><b>Lưu ý:</b> các thuộc tính trên bạn có thể dùng đẻ lấy (get) hoặc thiết lập (get).</p>
-  <p>Ví dụ:</p>
-  <script type="text/javascript">
-    document.write("hash: "+window.location.hash+"<br/>");
-    document.write("host: "+window.location.host+"<br/>");
-    document.write("host: "+window.location.hostname+"<br/>");
-    document.write("href: "+window.location.href+"<br/>");
-    document.write("origin: "+window.location.origin+"<br/>");
-    document.write("pathname: "+window.location.pathname+"<br/>");
-    document.write("port: "+window.location.port+"<br/>");
-    document.write("search: "+window.location.search+"<br/>");
-  </script>
-  <h2>Các thuộc tính trên chúng ta chỉ hay sử dụng phần hash, search và href, các phần còn lại rất ít khi sử dụng.
-    Riêng đối với hash là thành phần nằm sau dấu # nên các Framework Javascript như AngularJS hoặc các ứng dụng Ajax sử dụng để nhận diện được action hiện tại là gì.</h2>
+<h3>1/ Location trong Javascript</h3>
 </body>
 </html>
