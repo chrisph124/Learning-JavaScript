@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM-History trong Javascript</title>
+</head>
+<body>
+  <h3>1/  History trong Javascript là gì ?</h3>
+  <p>History là lịch sử trình duyệt lưu lại khi mình lướt web để có thể xem lại những gì ta đã xem trên trình duyệt trước đó. Mặc dù trình duyệt bây giờ đã
+    hỗ trợ chức năng này từ rất lâu rồi nhưng vẫn có thể sử dụng chức năng này thông qua đối tượng History trong Javascript.</p>
+  <p>History cũng là 1 thành phần con của <i>Window</i> nên cú pháp chúng ta phải thông qua đối tượng window</p>
+  <p><b>window.history</b></p>
+  <p><b>a/ Đếm tổng số trang đã lưu trong History</b></p>
+  <p>Cú pháp là : <b>var varName = window.history.length</b></p>
+  <p>Ví dụ:</p>
+  <p id="history"></p>
+  <script type="text/javascript">
+  document.getElementById('history').innerHTML = "Tổng số trang đã lưu trong history là : " + window.history.length;
+  </script>
+  <p><b>b/ Đi tới hoặc trở về 1 trang nào đó trong History</b></p>
+  <p>Có 3 phương thức để di chuyển đến 1 trang nào đó trong history:</p>
+  <ol>
+    <li><p><b>history.back() : </b>trở lại trang trước</p></li>
+    <li><p><b>history.foward(): </b>đi tới trang kế tiếp</p></li>
+    <li><p><b>history.go(number): </b>đi tới 1 trang :</p></li>
+    <li><p>Nếu <b>Number </b>âm tính thì trang hiện tại trừ đi Number</p></li>
+    <li><p>Nếu <b>Number </b>dương tính thì trang hiện tại cộng với Number</p></li>
+  </ol>
+</body>
+</html>
