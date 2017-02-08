@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hàm setTimeout() và setInterval() trong Javascript</title>
+</head>
+<body>
+  <i>Hai hàm setTimeout() và setInterval() có chung 1 đặc điểm là thiết lập và thực hiện 1 nhiệm vụ nào đó trong 1 khoảng thời gian nhất định được tạo ra.
+  Số lần thực hiện có thể lặp lại nhiều lần hoặc không. Tuy vậy vẫn có sự khác nhau ở 1 số điểm và <b>số lần lặp</b> cũng khác nhau.</i>
+  <strong>1/ Hàm setTimeout() trong Javascript</strong>
+  <p>Hàm này dùng để thiết lập trong 1 khoảng thời gian nào đó sẽ làm 1 việc nào đó và chỉ thực hiện <b>đúng một lần duy nhất.</b></p>
+  <p>Cú pháp : <b>setTimeout(funcion, time)</b></p>
+  <p>Trong đó:</p>
+  <p><b>function:</b> là nội dung cần thực hiện, là 1 hàm.</p>
+  <p><b>time:</b> là khoảng thời gian function đó sẽ thực hiện(được tính bằng mili giây)</p>
+  <p>Ví dụ click vào button thì 3 giây sau xuất hiện 1 câu chào.</p>
+  <button id="btnClick" onClick="hello()">Click để tạo lệnh</button>
+  <script type="text/javascript">
+    function hello(){alert("Hello")};
+    var set = setTimeout(hello,3000);
+    function clearAlert(){
+      clearTimeout(set);
+    };
+  </script>
+  <p><strong>a/ Hàm clearTimeout() trong Javascript</strong></p>
+  <p>Hàm này dùng để hủy hành động đã tạo ra trước đó, trước khi thực hiện thì ta đặt hàm setTimeout() vào trong 1 biến cụ thể</p>
+  <button id="clear" onClick="clearAlert()">Click để hủy lệnh</button>
+  <p><strong>2/ setInterval() trong Javascript</strong></p>
+  <p>Về cơ bản thì hàm này có cú pháp và chức năng giống như <b>setTimeout()</b> nhưng quan trọng nhất là hàm <i>setInterval() </i><b>có số lần thực hiện là vĩnh viễn.</b></p>
+  <p>Ví dụ 3 giây xuất hiện câu chào như setTimeout() nhưng nó sẽ lặp lại theo 1 chu kỳ 3 giây</p>
+  <script type="text/javascript">
+    setInterval(function(){alert("Hi")},8000);
+  </script>
+  <p><strong>a/ Hàm clearInterval() trong Javascript</strong></p>
+  <p>Tương tự như hàm clearTimeout(), hàm clearInterval() sẽ xóa đi nhiệm vụ mà ta đã thiết lập trong hàm setInterval(), và ta cũng phải đặt setInterval() trong một biến thì mới clear được.</p>
+  <p>Ví dụ: Sử dụng hàm setInterval() để xuất câu chào lên màn hình và số lần xuất hiện chỉ 1 lần duy nhất</p>
+  <script type="text/javascript">
+    var limit = setInterval(function(){
+      alert("Hi 4s");
+      clearInterval(limit);
+    },4000)
+  </script>
+</body>
+</html>
