@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chuỗi (string) trong Javascript</title>
+</head>
+<body>
+<h3>1/ String(chuỗi) trong Javascript</h3>
+<p>String là 1 đoạn text có thể có một hoặc nhiều kí tự. Thông thường ta lưu nó vào 1 biến và biến này được gọi là biến kiểu dữ liệu Chuỗi. Tất cả các chuỗi đều phải được
+bao quanh bằng kí tự nháy đơn ' ' hoặc nháy đôi " ".</p>
+<p>Ví dụ : var varName = "Đây là 1 đoạn text có kiểu dữ liệu là Chuỗi"</p>
+<p><i>Trong trường hợp có dấu nháy đơn hoặc nháy đôi xuất hiện trong chuỗi thì bắt buộc phải thêm kí tự \ đằng trước dấu nháy đó để không bị lỗi cú pháp và được hiểu
+đó là nội dung của đoạn text.</i></p>
+<p>var stringName = "This is a string text or you can call : \"Chuỗi\" "</p>
+<h3>2/ Nối chuỗi trong Javascript</h3>
+<p>Để nối chuỗi ta chỉ đơn giản là dùng dấu + để nối các chuỗi lại với nhau.</p>
+<p>Ví dụ : varName = "Chào" + "Mừng" + "Bạn";</p>
+<p>varName2 = "Đến" + "Đây";</p>
+<p>varName3 = varName + varName2;</p>
+<p><i>Trường hợp khi xuống hàng trong chuỗi(nhấn enter xuống hàng) trong Javascript thì bắt buộc phải dùng dấu + nối chuỗi nếu không sẽ bị lỗi cú pháp.</i></p>
+<p>var varName4 = "Chào mừng bạn đã đến "</p>
+<p>+ "với Javascript.";</p>
+<p>Có 1 cách khác viết gọn hơn là dùng dấu \ để trình duyệt biết là có xuống hàng.</p>
+<p>var varName5 = "Chào mừng bạn lại đến \</p>
+<p>với Javascript lần nữa"</p>
+<h3>3/ Ép sang kiểu chuỗi String trong javascript</h3>
+<p>Để ép 1 kiểu chuỗi nào đó sang kiểu String thì sử dụng cú pháp <b>string.toString()</b></p>
+<p>Ví dụ:</p>
+<p>// Trước khi chuyển đổi</p>
+<p>var number = 12;</p>
+<p>alert(typeof number);</p>
+<p>// Sau khi chuyển đổi</p>
+<p>number = number.toString();</p>
+<p>alert(typeof number);</p>
+<script type="text/javascript">
+  var number = 91;
+  alert ( typeof number );
+  number = number.toString();
+  alert ( typeof number );
+</script>
+<p>Từ khóa <i><b>typeof</b> vars</i> sẽ trả về kiểu dữ liệu của biến <i>vars</i>.</p>
+<p>Ngoài cách trên đây bạn có thể sử dụng String để tạo 1 chuỗi và vì là đối tượng nên nó phải có từ khóa <b>new</b> phía trước</p>
+<p>Ví dụ:</p>
+<p>var msg = new String("Đây là 1 kiểu String");</p>
+<p><i>Lúc này khi bạn truyền vào kiểu gì đi nữa thì kết quả trả về nó vẫn là kiểu String. Tuy nhiên không nên sử dụng cách này bởi vì chương trình sẽ chạy chậm hơn.</i></p>
+</body>
+</html>
