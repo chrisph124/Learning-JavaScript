@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Các hàm xử lý Chuỗi trong Javascript</title>
+</head>
+<body>
+  <h3>1/ Các hàm xử lý Chuỗi trong Javascript</h3>
+  <p><strong>Có 3 hàm thường dùng để tìm kiếm chuỗi con :</strong></p>
+  <ol>
+    <li>indexOf()</li>
+    <li>lastIndexOf()</li>
+    <li>search()</li>
+  </ol>
+  <p><strong>a/ Hàm indexOf()</strong></p>
+  <p>Sử dụng hàm String.IndexOf() để tìm kiếm các chuỗi con. Trong đó <b>String</b> là chuỗi cha. Hàm này sẽ trả về kết quả là vị trí xuất hiện đầu tiên
+  của chuỗi tìm kiếm ( bắt đầu là vị trí 0 ), nếu không tìm thấy chuỗi con thì kết quả trả về là -1. </p>
+  <p>Ví dụ:</p>
+  <p>Tìm chuỗi "<i>freetuts.net</i>" trong đoạn : Chào mừng đến với khóa học lập trình Javascript trên trang web freetuts.net</p>
+  <script type="text/javascript">
+    var text = "Chào mừng đến với khóa học lập trình Javascript trên trang web freetuts.net";
+    document.write("Vị trí xuất hiện của chuỗi 'freetuts.net' là: " + text.indexOf("freetuts.net"));
+  </script>
+  <p><strong>b/ Hàm lastIndexOf</strong></p>
+  <p>Trường hợp nếu chuỗi con xuất hiện nhiều lần trong chuỗi cha thì kết quả trả về cũng là vị trí xuất hiện đầu tiên của chuỗi con. Vậy nếu
+  muốn lấy vị trí của chuỗi con cuối cùng thì ta dùng cú pháp : <b>String.lastIndexOf()</b>. Kết quả cũng sẽ trả về -1 nếu như không tìm thấy.</p>
+  <p>Ví dụ :</p>
+  <p>Tìm chuỗi "javascript" thứ 2 trong chuỗi : "javascript có đuôi file là .js( đuôi .js là viết tắt của từ javascript)"</p>
+  <script type="text/javascript">
+    var text2 = "javascript có đuôi file là .js( đuôi .js là viết tắt của từ javascript)";
+    document.write("Vị trí xuất hiện của chuỗi 'javascript' cuối cùng là : " + text2.lastIndexOf("javascript"));
+  </script>
+</body>
+</html>
