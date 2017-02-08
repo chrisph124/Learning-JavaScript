@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM - Window trong Javascript</title>
+</head>
+<body>
+  <h3>1/ Thao tác với 1 cửa sổ window</h3>
+  <p><i>Đối tượng <b>Window</b> cung cấp 1 số phương thức giúp thao tác với trình duyệt dễ dàng hơn.</i></p>
+  <b>a/ Mở 1 cửa sổ với lệnh window.open()</b>
+  <p>Cú pháp: window.open(url,name,options)</p>
+  <p>Trong đó:</p>
+  <p><b>url: </b>là đường dẫn website muốn mở</p>
+  <p><b>name: </b>là tên bạn đặt cho cửa sổ này</p>
+  <p><b>options: </b>là 1 chuỗi các thông số được cách nhau bởi dấu phẩy, sau đây là 1 số thông số thông dụng:</p>
+  <p><b>height = pixels</b> hiển thị chiều cao của cửa sổ.</p>
+  <p><b>width = pixels</b> hiển thị chiều rộng của cửa sổ.</p>
+  <p><b>top = pixels</b> hiển thị lề trên so với cửa sổ.</p>
+  <p><b>left = pixels</b> hiển thị lề trái so với cửa sổ.</p>
+  <p><b>menubar = yes | no | 1 | 0</b> có/không hiển thị thanh menu.</p>
+  <p><b>resizable = yes | no | 1 | 0</b> có/không hiển thị biểu tượng resize cửa sổ.</p>
+  <p><b>scrollbars = yes | no | 1 | 0</b> có/không hiển thị thanh cuộn cửa sổ.</p>
+  <p><b>status = yes | no | 1 | 0</b> có/không hiển thị thanh trạng thái.</p>
+  <p><b>titlebar = yes | no | 1 | 0</b> có/không hiển thị titlebar</p>
+  <p><b>toolbar = yes | no | 1 | 0</b> có/không hiển thị thanh toolbar</p>
+  <p><b>fullscreen = yes | no | 1 | 0</b> có/không hiển thị biểu tượng fullscreen cửa sổ</p>
+  <br/><hr/><br/>
+  <p style="text-align:center"><b>Ví dụ:</b><a href="#" onClick="return openWindow()" style="margin-left:10px"><b>Open</b></a></p>
+  <script type="text/javascript">
+    var kenh14 = null;
+    function openWindow(){
+      kenh14 = window.open('http://www.kenh14.vn','kenh14','width=500, heigth=500 ');
+      return false;
+    };
+  </script>
+  <br/><hr/><br/>
+  <p><b>b/ Đóng 1 cửa sổ với lệnh window.close()</b></p>
+  <p>Sau khi mở 1 cửa sổ ra thì  để đóng nó ta sử dụng lệnh <b>windowObj.close()</b>. Trong đó <b>windowObj</b> là cửa sổ mà ta
+  sử dụng lệnh <b>window.open()</b> tạo ra</p>
+  <p><b>c/ Di chuyển cửa sổ với lệnh window.moveTo()</b></p>
+  <p>Sau khi mở 1 cửa sổ, nếu muốn di chuyển nó thì ta dùng lệnh window.moveTo(top,left). Trong đó:</p>
+  <p><b>Top: </b>là khoảng cách cửa sổ so với lề trên ( đơn vị : pixels)</p>
+  <p><b>Left: </b> là khoảng cách cửa sổ so với lề trái ( đơn vị : pixels)</p>
+  <br/><hr/><br/>
+  <p style="text-align:center"><b>Ví dụ:</b></p>
+  <p style="text-align:center"><a href="#" onClick="return openWindow1()"><b>Open</b></a></p>
+  <p style="text-align:center"><a href="#" onClick="return moveWindow1()"><b>Move</b></a></p>
+  <p style="text-align:center"><a href="#" onClick="return closeWindow1()"><b>Close</b></a></p>
+  <script type="text/javascript">
+    var zing = null;
+    function openWindow1(){
+      zing = window.open("http://www.zing.vn","zing","width = 500, height = 500");
+      return false;
+    }
+    function closeWindow1(){
+      zing.close();
+      return false;
+    }
+    function moveWindow1(){
+      zing.moveTo(500, 100);
+      zing.focus();
+      return false;
+    }
+  </script>
+</body>
+</html>
