@@ -32,5 +32,127 @@
     var text2 = "javascript có đuôi file là .js( đuôi .js là viết tắt của từ javascript)";
     document.write("Vị trí xuất hiện của chuỗi 'javascript' cuối cùng là : " + text2.lastIndexOf("javascript"));
   </script>
+  <p><b>c/ Hàm search()</b></p>
+  <p>Ngoài 2 hàm trên bạn cũng có thể sử dụng hàm <i>search()</i> với cú pháp <b>String.search(str)</b> và tác dụng của nó cũng giống như hàm indexOf().</p>
+  <h3>2/ Cắt các chuỗi con</h3>
+  <p>Nếu muốn cắt 1 chuỗi con từ chuỗi cha thì đây là 3 hàm để làm điều đó:</p>
+  <ol>
+    <li>slice ( start ,end )</li>
+    <li>substring ( start, end )</li>
+    <li>substr ( start, length )</li>
+    <li><i>Tất cả các vị trí của chuỗi đều bắt đầu từ 0.</i></li>
+  </ol>
+  <p><b>a/ Hàm slice(start,end)</b></p>
+  <p>Có hai tham số truyền vào :</p>
+  <p><b>start : </b> vị trí bắt đầu</p>
+  <p><b>end : </b> vị trí kết thúc</p>
+  <p><i>Nếu muốn lấy vị trí từ dưới cuối lên thì truyền tham số âm vào start, lúc đấy hàm sẽ tính ngược lại từ dưới lên.</i></p>
+  <p>Ví dụ:</p>
+  <p>Cắt ra vị trí đầu tiên đến vị trí thứ 22 của đoạn : " Đây là ví dụ cắt chuỗi con của hàm Slice()"</p>
+  <p>Và ngược lại từ -30 đến 22</p>
+  <p>Nếu chỉ truyền 1 tham số thì hàm sẽ tự hiểu <i>end</i> là vị trí cuối cùng của chuỗi.</p>
+  <script type="text/javascript">
+    var slice = "Đây là ví dụ cắt chuỗi con của hàm Slice()";
+    document.write("<i>" + "Đoạn cắt từ 0 đến 22 là : " + slice.slice(0,22) + "<br/>" + "<i/>");
+    document.write("<i>" + "Đoạn cắt từ -30 đến 22 là : " + slice.slice(-30,22) + "<br/>" + "<i/>" );
+    document.write("<i>" + "Đoạn cắt từ vị trí số 7 đến cuối là : " + slice.slice(7) + "<i/>");
+  </script>
+  <p><b>b/ Hàm substring(start,end)</b></p>
+  <p>Hàm <b>substring()</b> có cách sử dụng giống với hàm <b>slice()</b>, tuy nhiên tham số truyền vào hàm substring() phải luôn luôn lớn hơn <b>0</b>.
+  Khi chỉ gắn 1 tham số vào hàm thì nó sẽ tự hiểu end là kí tự cuối cùng của chuỗi.</p>
+  <p>Ví dụ:</p>
+  <p>Cắt chuỗi trong đoạn : "123456789"</p>
+  <script type="text/javascript">
+    var subString = "123456789";
+    document.write("Đoạn cắt từ 0 tới 5 là : " + subString.substring(1));
+  </script>
+  <p><b>c/ Hàm substr(start,length)</b></p>
+  <p>Hàm substr() có hai tham số là <i>start</i> và <i>length</i>, trong đó start là vị trí bắt đầu và length là số ký tự muốn lấy bắt đầu từ vị trí start.
+    Nếu bạn truyền tham số start là số âm thì nó sẽ tính từ cuối trở lên, còn tham số length phải luôn luôn là số dương.</p>
+  <p>Ví dụ :</p>
+  <p>Lấy vị trí start là 1 và length là 10 của đoạn : " Hello world, welcome to Javascript basic."</p>
+  <script type="text/javascript">
+    var substr = "Hello world, welcome to Javscript basic";
+    document.write("Chuỗi được cắt từ vị trí 1 và có độ dài 10 là : " + substr.substr(1,10));
+  </script>
+  <h3>3/ Tìm và thay đổi chuỗi con</h3>
+  <p><b>a/ Hàm tìm kiếm và thay thế chuỗi replace()</b></p>
+  <p>Để tìm kiếm và lặp một chuỗi con nào đó thì bạn sử dụng hàm <b>replace(str_find, str_replace)</b>, trong đó :</p>
+  <ol>
+    <li><b>str_find</b> là chuỗi cần tìm</li>
+    <li><b>str_replace</b> là chuỗi sẽ được thay thế chuỗi str_find</li>
+  </ol>
+  <p>Ví dụ :</p>
+  <p>Thay thế từ codecademy.com bằng từ freetuts.net trong đoạn : "Chào mừng bạn đã đến với codecademy.com"</p>
+  <script type="text/javascript">
+    var replace = "Chào mừng bạn đã đến với codecademy.com";
+    document.write("Sau khi thay thế : " + replace.replace("codecademy.com","freetuts.net"));
+  </script>
+  <p><b>b/ Chuyển đổi giữa chữ hoa và chữ thường</b></p>
+  <p>Để chuyển đổi thành chữ in hoa ta dùng hàm <b>toUpperCase()</b> và chuyển thành chữ thường thì dùng hàm <b>toLowerCase()</b></p>
+  <p id="change">Đoạn TEXT bình thường.</p>
+  <button id="upper" onClick="upperCase()">Click để in hoa toàn bộ đoạn text trên</button>
+  <button id="lower" onClick="lowerCase()">Click để chuyển thành chữ thường toàn bộ</button>
+  <script type="text/javascript">
+  var a = document.getElementById('change');
+  var text = "Đoạn TEXT bình thường";
+    function upperCase(){
+      a.innerHTML = text.toUpperCase();
+    };
+    function lowerCase(){
+      a.innerHTML = text.toLowerCase();
+    };
+  </script>
+  <p><b>c/ Nối thêm chuỗi</b></p>
+  <p>Ngoài việc dùng toán tử <b>+</b> để nối chuỗi thì ta có thể dùng hàm <b>concat()</b></p>
+  <p>Nối 2 đoạn "Đây là 1" và "đoạn text chuỗi"</p>
+  <p>Đây là 1</p>
+  <p>đoạn text chuỗi</p>
+  <p id="chuoi"></p>
+  <button onClick="concat()">Click vào để nối 2 chuỗi lại</button>
+  <script type="text/javascript">
+    var chuoi = document.getElementById('chuoi');
+    var chuoi1 = "Đây là 1";
+    var chuoi2 = " đoạn text chuỗi";
+    function concat(){
+      chuoi.innerHTML = chuoi1.concat(chuoi2);
+    }
+  </script>
+  <p><b>d/ Tìm ký tự hoặc mã ASCII của một ký tự</b></p>
+  <p>Để xem ký tự của một vị trí nào đó thì dùng hàm <b>charAt()</b>, còn xem mã ASCII thì dùng hàm <b>charCodeAt()</b>.</p>
+  <p>Cả hai hàm này đều có tham số truyền vào là vị trí muốn xem.</p>
+  <p>Ví dụ :</p>
+  <p>Javascript</p>
+  <p onClick="charAt()">Click vào đây để tìm kí tự của từ thứ 2</p>
+  <p id="vdd1"></p>
+  <p onClick="charCodeAt()">Click vào đây để biết mã ASCII của từ thứ 2</p>
+  <p id="vdd3"></p>
+  <script type="text/javascript">
+   var vdd1 = document.getElementById('vdd1');
+   var vdd3 = document.getElementById('vdd3');
+   var vdd2 = "Javascript";
+    function charAt(){
+      vdd1.innerHTML = vdd2.charAt(2);
+    }
+    function charCodeAt(){
+      vdd3.innerHTML = vdd2.charCodeAt(2);
+    }
+  </script>
+  <p><b>e/ Chuyển đổi chuỗi sang mảng</b></p>
+  <p>Để chuyển một chuỗi sang mảng thì ta sử dụng hàm <b>split()</b> với tham số truyền vào là ký tự ngăn cách giữa các phần tử.</p>
+  <p>Ví dụ 1 chuỗi "123456789". Nếu tham số truyền vào là 2, thì số 2 trong chuỗi sẽ đc chuyển thành dấu phấy để ngăn các mảng trước và sau số 2 ra.</p>
+  <p>Nếu tham số truyền vào là khoảng trắng " " thì cũng chuyển khoảng trắng thành dấu phẩy để ngăn các mảng trước và sau khoảng trắng ra.</p>
+  <p>Còn nếu tham số truyền vào là "" thì hàm vẫn hiểu đây chưa phải là tham số rỗng nên sẽ hiểu là các kí tự dính liền nhau không được ngăn cách bởi khoảng trắng sẽ được
+  tách ra để tạo thành các mảng. Lúc này nếu trong chuỗi có khoảng trắng thì hàm sẽ hiểu <u>khoảng trắng là 1 kí tự</u>.</p>
+  <p>Ví dụ:</p>
+  <p  id="split1" onClick="split()">1234 5 6 7 8 9</p>
+  <p id="split2"></p>
+  <script type="text/javascript">
+    var split1 = document.getElementById('split1').innerHTML;
+    var split2 = document.getElementById('split2');
+    function split(){
+      split2.innerHTML = split1.split("");
+    }
+  </script>
 </body>
 </html>
