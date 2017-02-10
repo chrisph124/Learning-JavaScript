@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lệnh rẽ nhánh switch-case trong javascript</title>
+</head>
+<body>
+  <h3>1/ Lệnh switch-case trong javascript</h3>
+  <p>Lệnh dùng để rẽ nhánh chương trình, ứng với mỗi nhánh sẽ có 1 điều kiện cụ thể và điều kiện đó ở dạng so sánh bằng.</p>
+  <p>Cú pháp như sau:</p>
+  <h5><p><b>switch(variable)</b>{</p>
+      <p><b>case</b> value_1:{</p>
+      <p>//Do something</p>
+      <p><b>break;</b></p>
+        <p>}</p>
+        <p><b>case</b> value_2:{</p>
+        <p>//Do something</p>
+        <p><b>break;</b></p>
+          <p>}</p>
+          <p><b>case</b> value_3:{</p>
+          <p>//Do something</p>
+          <p><b>break;</b></p>
+            <p>}</p>
+            <p><b>default</b>{</p>
+            <p>//Do something</p>
+              <p>}</p>
+    <p>}</p></h5>
+  <p>Lệnh <b>switch</b> sẽ chạy các Cases từ trên xuống, nếu <i>case</i> đầu tiên không phù hợp thì sẽ chạy sang <i>case</i> tiếp theo. Nếu như trong các Cases không có <i>case</i> phù hợp thì hàm sẽ chạy lệnh default, hoặc nếu có case phù hợp thì lệnh sẽ <i>break</i> và thoát khỏi <b>switch</b> luôn.</p>
+  <ol type="square"><p><b>Quy trình chạy sẽ là:</b></p>
+  <li><p>Nếu như tham số <i>variable</i> có giá trị là <i>value_1</i> thì sẽ thực thi lệnh code trong <i><b>case</b> value_1</i> và thoát khỏi <b>switch</b>, ngược lại nếu không
+    phù hợp <i>case_1</i> thì sẽ chạy tiếp <i>case_2</i>.</p></li>
+    <li><p>Tới đây nếu <i>case_2</i> vẫn phù hợp thì hàm sẽ thực thi tiếp code trong case đó và kiểm tra các Cases còn lại.</p></li>
+    <li><p>Trường hợp nếu không có Cases nào phù hợp thì hàm sẽ chạy tới <i>default</i> sau đó sẽ thoát khỏi <b>switch case</b>. Như vậy ta sẽ hiểu <i>default</i> như để xử lý cho một trường hợp ngoại lệ nào đó.</p></li>
+  </ol>
+<p>Ví dụ:</p>
+<p>Viết chương trình kiểm tra số chẵn-lẻ khi người dùng nhập.</p>
+<button id="btnvd1" onClick="ChanLe()">Click để nhập số!</button>
+<script type="text/javascript">
+  function ChanLe(){
+  var number = parseInt(prompt("Nhập 1 số bất kỳ để kiểm tra!"));
+  var mod = (number % 2);
+  switch (mod){
+    case 0 :
+      alert(number + " là số chẵn")
+      break;
+    case 1 :
+      alert(number + " là số lẻ")
+      break;
+    default :
+      alert("Kí tự bạn nhập không phải số");
+    }
+  }
+</script>
+<p><i>Bạn cũng có thể dùng ví dụ này chạy bằng if-else</i></p>
+<button id="btnvd2" onClick="ifE()">Click để nhập số!</button>
+<script type="text/javascript">
+  function ifE(){
+    var number2 = parseInt(prompt("Nhập 1 số để kiểm tra(if-else)"));
+    var mod2 = (number2 % 2);
+    if(mod2 == 0){
+      alert(number2 + " là số chẵn");
+      }
+    else if(mod2 == 1){
+      alert(number2 + " là số lẻ");
+    }
+    else{alert("Kí tự bạn nhập không phải là số!")}
+  }
+</script>
+<p>Ví dụ 2:</p>
+
+<p>Đây là màu gì ? Red hay Blue ?</p>
+<div style="width:200px;height:100px;background-color:red"></div>
+<p><b>1/ Trường hợp không có <i>default</i> </b></p>
+<button onClick="Color()">Click để viết đáp án ( trả lời bằng tiếng anh)</button>
+<script type="text/javascript">
+  function Color(){
+    var answer = prompt("Câu trả lời của bạn là :");
+    switch(answer){
+      case "red" :
+        alert("Đúng rồi! Đây là màu đỏ")
+        break;
+    case "blue" :
+      alert("Bậy bạ! Đây là màu đỏ, không phải màu xanh")
+      break;
+    }
+  }
+</script>
+<p><b>2/ Trường hợp không có <i>break</i></b></p>
+<button onClick="Color2()">Click để viết đáp án (trả lời bằng tiếng anh)</button>
+<script type="text/javascript">
+  function Color2(){
+    var answer = prompt("Câu trả lời của bạn là:");
+    switch(answer){
+      case "red" :
+      alert("Đúng rồi! Đây là màu đỏ.");
+      case "blue" :
+      alert ("Bậy rồi! Đây không phải màu xanh. Đây là màu đỏ nhé.");
+      default :
+      alert("Vui lòng trả lời 1 trong 2 đáp án trên!")
+    }
+  }
+</script>
+<p><b>3/ Trường hợp chỉ có <i>break</i> ở 1 case nào đó.</b></p>
+<p>Các đáp án bây giờ sẽ là : red, blue, yellow.</p>
+<button onClick="Color3()">Click để viết đáp án (trả lời bằng tiếng anh)</button>
+<script type="text/javascript">
+  function Color3(){
+    var answer = prompt("Câu trả lời của bạn là :");
+    switch(answer){
+      case "red" :
+      alert ("Đúng rồi! Đây là màu đỏ");
+      case "yellow" :
+      alert ("Bậy nha! Đây là màu đỏ, không phải màu vàng");
+      break;
+      case "blue" :
+      alert ("Đây là màu đỏ! Không phải màu xanh đâu");
+      default :
+      alert ("Vui lòng chỉ trả lời 1 trong 3 đáp án trên");
+    }
+  }
+</script>
+<p>Như vậy rút ra kết luận là :</p>
+<ol>
+  <li>Trong trường hợp không có <i>default</i>, hàm vẫn chạy kiểm tra các Cases như bình thường, chỉ là không có thêm 1 điều kiện để kiểm tra trường hợp ngoại lệ.</li>
+  <li>Trường hợp không có <i>break</i> thì khi kiểm tra đến 1 điều kiện hợp lệ thì lệnh vẫn in ra kết quả như bình thường nhưng <b>in tiếp ra các kết quả tiếp theo sau đó vì không có <i>break</i> để dừng và thoát lệnh ra khỏi <i>switch case</i></b></li>
+  <li>Nếu <i>break</i> ở 1 case nào đó, ví dụ như ta có 3 cases và 1 default. Khi ta đặt <i>break</i> ở case 1, nếu case 1 hợp lệ và hàm in ra kết quả xong sẽ thoát lệnh ngay lập tức, còn nếu case 2 hợp lệ thì <b>sẽ in kết quả ở case 2 và case 3 lẫn default</b> vì những cases và default này không có <i>break</i></li>
+</ol>
+<p><b>4/ Trường hợp gom nhóm Cases</b></p>
+<p>Ở đây việc gom nhóm cases lại với nhau và chỉ dùng 1 lệnh <i>break</i> khi điều kiện của các Cases đều đúng như nhau và chọn cases nào cũng được.</p>
+<p>Tóm lại Nếu nhiều nhánh cùng xử lý chung một đoạn code thì ta sẽ bỏ đi lệnh break ở bên trong, như vậy nó sẽ chạy luôn case ở phía dưới mà không cần kiểm tra điều kiện.</p>
+<button onClick="Color4()">Chọn màu nào đúng ? Red, Blue hay Yellow?</button>
+<script type="text/javascript">
+  function Color4(){
+    var answer = prompt("Câu trả lời của bạn là :");
+    switch(answer){
+      case "red" :
+      case "blue" :
+      case "yellow" :
+      alert("Thật ra thì đáp án nào bạn chọn cũng đúng, tại tui không có biết tiếng anh :))");
+      break;
+      default :
+      alert("Vui lòng chỉ chọn 1 trong 3 đáp án trên");
+    }
+  }
+</script>
+</body>
+</html>
