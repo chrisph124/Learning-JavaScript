@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tìm hiểu về Hoisting trong Javascript</title>
+</head>
+<body>
+  <h3>1/ Hoisted là gì trong Javascript ?</h3>
+  <p>Hoisting là vấn đề liên quan đến <i>cách khai báo biến variable trong javascript</i>. Bạn có thể sử dụng 1 biến mà không cần định nghĩa trước trong javascript thế nên để
+  chương trình chạy chuẩn, bạn nên khai báo biến trước khi sử dụng và đặt nó trên cùng phạm vi của biến <i>(trong function, đoạn script, ...).</i></p>
+  <p>Như đã nói ở trên, sau đây là 1 số ví dụ về việc định nghĩa trước và không định nghĩa trước của 1 biến trong javascript:</p>
+  <p><u>Ví dụ 1:</u></p>
+  <p>Biến chưa khai báo trước :</p>
+  <input id="ckb" type="text" readonly value="" />
+  <p>Đã khai báo biến :</p>
+  <input id="dkb" type="text" readonly value="" />
+  <script type="text/javascript">
+    bien = "Chua khai bao";
+    document.getElementById('ckb').value = bien;
+    var bien;
+    document.getElementById('dkb').value = bien;
+  </script>
+  <p><u>Ví dụ 2:</u></p>
+  <p>Biến chưa khai báo trước :</p>
+  <input type="text" id="ckb1" readonly value="" />
+  <p>Biến sau khi đã khai báo và thay đổi nội dung :</p>
+  <input type="text" id="dkb1" readonly value="" />
+  <script type="text/javascript">
+    bien = "Chưa khai báo gì hết";
+    document.getElementById('ckb1').value = bien;
+    var bien = "Đã khai báo và thay đổi nội dung";
+    document.getElementById('dkb1').value = bien;
+  </script>
+  <p>Để khai báo chuẩn hoisting thì ta nên <b>khai báo biến nằm trên cùng của đoạn mã script</b></p>
+  <p>Nếu gán 1 tên biến vào giá trị khởi tạo sau đó mới khai báo biến thì chương trình chưa hiểu biến đó là gì(vì khai báo biến nằm sau giá trị khởi tạo) nên nó sẽ in ra <i>undefined</i></p>
+  <p><i>Việc hiểu rõ cơ chế của <b>hoisted</b> giúp giảm thiểu lỗi phát sinh và dễ debug trong quá trình phát triển, dễ quản lý code.</i></p>
+</body>
+</html>
