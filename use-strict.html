@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Use Strict - Strict Mode trong Javascript.</title>
+</head>
+<body>
+  <h3>1/ Chế độ Strict Mode là gì ?</h3>
+  <p>Trước tiên, khi làm việc với Javascript, bạn có thể sử dụng biến mà chưa cần định nghĩa trước(hoisting), có thể quên đặt dấu chấm phẩy ở cuối mỗi đoạn code,
+  có thể sử dụng tên 1 từ khóa để làm tên biến.</p>
+  <p>Điều này không sai nhưng sẽ thiếu sự ổn định và an toàn. Và từ phiên bản 1.8.5 của Javascript trở đi đã bổ sung 1 khái niệm gọi là <b>Strict Mode</b> để ngăn chặn, giải quyết việc này.</p>
+  <h3>2/ Use Strict là gì ?</h3>
+  <p><b>Use Strict</b> là từ khóa để khai báo kích hoạt chế độ <b>Strict Mode</b>, bạn muốn sử dụng <b>Strict Mode</b> ở đâu thì chỉ cần đặt từ khóa <b>Use Strict</b> ở đó.</p>
+  <p>Toàn cục(global) và cục bộ(local) là 2 phạm vi để sử dụng.</p>
+  <p>Toàn cục(global) là khi bạn đặt <b>use strict</b> ở ngoài 1 hàm(function) và phía trên cùng của 1 file script thì lúc này tất cả các đoạn code bên dưới đều chịu ảnh hưởng của <b>strict mode</b>.</p>
+  <p>Mặt khác, cục bộ(local) nghĩa là bạn đặt <b>use strict</b> ở trong 1 hàm(function) nào đó và phạm vi ảnh hưởng chỉ gói gọn bên trong hàm đó mà thôi.</p>
+  <p><b>a/ Ví dụ về tính toàn cục(global)</b></p>
+  <p><i>// Phía trên cùng của file</i></p>
+  <p><b>"use strict";</b></p>
+  <p><i>// Đoạn code này lỗi vì biến domain chưa được khởi tạo</i></p>
+  <p>domain = "http://freetuts.net";</p>
+  <p><i>// In ra màn hình</i></p>
+  <p>document.write(domain);</p>
+  <p>Ở ví dụ trên, code sẽ báo lỗi vì khi đã gán <b>use strict</b> lên trên cùng đoạn script thì code bên trong sẽ phải tạo biến domain trước rồi mới được sử dụng, không thể sử dụng trước như bình thường được.</p>
+  <p>Điều kiện này vẫn đúng(vẫn báo lỗi) cho dù bạn sử dụng 1 biến chưa khởi tạo bên trong 1 hàm nào đó mà vẫn nằm dưới <b>use strict</b></p>
+<p><b>b/ Ví dụ về local(cục bộ)</b></p>
+<p><i>//Tạo 1 hàm</i></p>
+<p>function do_sth(){</p>
+<p><b>"use strict";</b></p>
+<p>}</p>
+<p>domain = "Let's do something";</p>
+<p>document.write(domain);</p>
+<p>Ở trên đây thì vẫn đúng thì khi in ra ta không chạy hàm do_sth() mà chỉ in ra biến domain, mặc dù chưa khởi tạo biến nhưng như đã nói ở trên,
+  javascript được quyền chạy 1 giá trị biến dù biến đó chưa được khởi tạo.</p>
+
+</body>
+</html>
