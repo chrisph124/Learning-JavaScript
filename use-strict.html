@@ -34,6 +34,25 @@
 <p>document.write(domain);</p>
 <p>Ở trên đây thì vẫn đúng thì khi in ra ta không chạy hàm do_sth() mà chỉ in ra biến domain, mặc dù chưa khởi tạo biến nhưng như đã nói ở trên,
   javascript được quyền chạy 1 giá trị biến dù biến đó chưa được khởi tạo.</p>
-
+<p><b>c/ 1 số trường hợp bị lỗi, không hợp lệ khi chạy chế độ Strict Mode</b></p>
+<ol type="square">
+  <li>Sử dụng biến chưa được định nghĩa</li>
+  <li>Không chấp nhận Delete biến</li>
+  <li>Định nghĩa 1 thuộc tính 2 lần</li>
+  <li>Khai báo tham số bị trùng(vd : khai báo 2 tham số trùng tên trong 1 hàm)</li>
+  <li>Lỗi literals và escape với number(không được sử dụng literals và escape với kiểu number)</li>
+  <li>Khai báo tên biến trùng với key(trùng tên hàm)</li>
+</ol>
+<p><b>1 số từ khóa không được đặt <i>làm tên biến</i></b></p>
+<ol>
+  <li>implements</li>
+  <li>interface</li>
+  <li>package</li>
+  <li>private</li>
+  <li>protected</li>
+  <li>public</li>
+  <li>static</li>
+  <li>yield</li>
+</ol>
 </body>
 </html>
