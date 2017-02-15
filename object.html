@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Đối tượng(object) trong Javascript</title>
+</head>
+<body>
+  <h3>1/ Đối tượng(object) là gì ?</h3>
+  <p><i>Như ta biết Javascript không được xếp vào danh sách những ngôn ngữ lập trình hướng đối tượng,
+    tuy nhiên về khách quan mà nói thì bạn hoàn toàn có thể lập trình hướng đối tượng thông qua kiểu dữ liệu Object mà Javascript đã cung cấp</i></p>
+  <p>Trong Javascript, đối tượng là 1 khái niệm trừu tượng thể hiện cho 1 đối tượng cụ thể và nó có sẵn 1 số đối tượng như <b>Date, Number, ... </b></p>
+  <p>Ngoài các đối tượng trên thì ta vẫn có thể tạo ra 1 đối tượng theo ý mình dựa theo vào yêu cầu của ứng dụng.</p>
+  <p><b>a/ Khởi tạo đối tượng</b></p>
+  <p><b><i>Sử dụng từ khóa new Object()</i></b></p>
+  <p><b>var</b> Comment = new Object();</p>
+  <p><b><i>Sử dụng từ khóa {}</i></b></p>
+  <p><b>var</b> Comment = {};</p>
+  <h3>2/ Thuộc tính và phương thức của đối tượng</h3>
+  <p><b>a/ Thuộc tính</b></p>
+  <p>Là những đặc điểm( có thể hiểu là 1 biến ) cần lưu trữ trong đối tượng. Ví dụ với đối tượng Comment thì cần có những thuộc tính sau :</p>
+  <ul>
+    <li>title</li>
+    <li>content</li>
+    <li>fullname</li>
+    <li>email</li>
+  </ul>
+  <p><b>Có 3 các để khai báo như sau :</b></p>
+  <div style="margin:auto;width:1030px;">
+    <div style="border:solid 1px black; padding:10px;width:300px;margin:10px;float:left">
+      <p><b>Cách 1 : </b> sử dụng từ khóa new Object()</p>
+      <p><i>//Khởi tạo</i></p>
+      <p><b>var</b> Comment = new Object();</p>
+      <p><i>//Thêm thuộc tính</i></p>
+      <p>Comment.title = '';</p>
+      <p>Comment.content = '';</p>
+      <p>Comment.fullname = '';</p>
+      <p>Comment.email = '';</p>
+    </div>
+    <div style="border:solid 1px black; padding:10px;width:300px;margin:10px;float:left">
+      <p><b>Cách 2 : </b> sử dụng từ khóa {} và thêm thuộc tính ngay lúc khai báo</p>
+      <p><i>//Khởi tạo và thêm thuộc tính</i></p>
+      <p><b>var</b> Comment = {</p>
+      <p>title = '',</p>
+      <p>content = '',</p>
+      <p>fullname = '';</p>
+      <p>email = ''</p>
+      <p>};</p>
+    </div>
+    <div style="border:solid 1px black; padding:10px;width:300px;margin:10px;float:left">
+      <p><b>Cách 3 : </b> sử dụng từ khóa {} và thêm thuộc tính sau đó</p>
+      <p><i>//Khởi tạo</i></p>
+      <p><b>var</b> Comment = {};</p>
+      <p><i>//Thêm thuộc tính</i></p>
+      <p>Comment.title = '';</p>
+      <p>Comment.content = '';</p>
+      <p>Comment.fullname = '';</p>
+      <p>Comment.email = '';</p>
+    </div>
+    <p style="text-align:center"><b>Trong 3 cách này thì cách 2 là cách tối ưu nhất vì nó mạch lạc, dễ hiểu và dể quản lý code.</b></p>
+  </div>
+  <p><b>Phương thức</b></p>
+  <p>Nếu như Thuộc tính là những đặc điểm cần lưu trữ trong đối tượng thì Phương thức là 1 hành động( có thể hiểu là 1 hàm ) của đối tượng.</p>
+  <p>Ví dụ trong đối tượng Comment ta cần 2 phương thức là :</p>
+  <ul>
+    <li>addComment()</li>
+    <li>validateComment()</li>
+  </ul>
+  <p>Và vẫn sẽ có 3 cách khai báo như sau:</p>
+  <div style="margin:auto;width:1200px;">
+    <div style="border:solid 1px black; padding:10px;width:350px;margin:10px;float:left">
+      <p><b>Cách 1 : </b> sử dụng từ khóa new Object()</p>
+      <p><i>//Khởi tạo</i></p>
+      <p><b>var</b> Comment = new Object();</p>
+      <p><i>//Thêm phương thức</i></p>
+      <p>Comment.addComent = function (){</p>
+      <p><i>//Hành động nào đó</i></p>
+      <p>}</p>
+      <p>Comment.validateComment = function(){</p>
+      <p><i>//Hành động nào đó</i></p>
+      <p>}</p>
+    </div>
+    <div style="border:solid 1px black; padding:10px;width:350px;margin:10px;float:left">
+      <p><b>Cách 2 : </b> sử dụng từ khóa {} và thêm thuộc tính ngay lúc khai báo</p>
+      <p><i>//Khởi tạo và thêm thuộc tính</i></p>
+      <p><b>var</b> Comment = {</p>
+      <p>addComment = function(){</p>
+      <p><i>//Hành động nào đó</i></p>
+      <p>},</p>
+      <p>validateComment = function(){</p>
+      <p><i>//Hành động nào đó</i></p>
+      <p>}</p>
+      <p>};</p>
+    </div>
+    <div style="border:solid 1px black; padding:10px;width:350px;margin:10px;float:left">
+      <p><b>Cách 3 : </b> sử dụng từ khóa {} và thêm thuộc tính sau đó</p>
+      <p><i>//Khởi tạo</i></p>
+      <p><b>var</b> Comment = {};</p>
+      <p><i>//Thêm phương thức</i></p>
+      <p>Comment.addComment = function(){</p>
+      <p><i>//Do Something</i></p>
+      <p>};</p>
+      <p>Comment.validateComment = function(){</p>
+      <p><i>//Do Something</i></p>
+      <p>};</p>
+    </div>
+    <p style="text-align:center"><b>Cách 2 vẫn là cách tối ưu nhất vì nó mạch lạc, dễ hiểu và dể quản lý code.</b></p>
+  </div>
+  <h3>3/ Thao tác với thuộc tính và phương thức trong đối tượng</h3>
+  <p>Sau khi tạo xong đối tượng thì có 2 cách sử dụng căn bản là <b>gọi</b> và <b>gán </b> dữ liệu cho thuộc tính và phương thức.</p>
+  <p>Nhưng thao tác cơ bản vẫn là :</p>
+  <ul>
+    <li>Gán giá trị cho thuộc tính</li>
+    <li>Lấy giá trị của thuộc tính</li>
+    <li>Gọi phương thức</li>
+  </ul>
+  <p><b>a/ Gán giá trị cho thuộc tính</b></p>
+  <p>Để gán giá trị cho thuộc tính thì ta chỉ cần sử dụng toán tử = giống như cách gán giá trị cho biến</p>
+  <p>Comment.title = ' Tiêu đề bình luận ';</p>
+  <p>Nhưng nếu bạn gọi từ 1 hàm trong đối tượng thì bạn có thể sử dụng từ khóa <i>this</i></p>
+  <p>Ví dụ:</p>
+  <p><b>var</b> Comment = {</p>
+  <p>title : '';</p>
+  <p>addComment = function(){</p>
+  <p>this.title = 'Tiêu đề bình luận';</p>
+  <p>}</p>
+  <p>}</p>
+  <p><b>b/ Lấy giá trị của thuộc tính</b></p>
+  <p>Để lấy giá trị của thuộc tính thì ta làm tương tự như cách thao tác với biến</p>
+  <p><b>var</b> title = Comment.title;</p>
+  <p>Vẫn sử dụng <i>this</i> nếu gọi từ 1 hàm trong đối tượng</p>
+  <p>Ví dụ:</p>
+  <p><b>var </b>Comment = {</p>
+  <p>title : '';</p>
+  <p>addComment = function(){</p>
+  <p><b>var</b> title = this.title;</p>
+  <p>}</p>
+  <p>}</p>
+  <p><b>c/ Gọi phương thức</b></p>
+  <p><i>Tương tự thuộc tính, triển bình thường</i></p>
+  <p>comment.addComment();</p>
+  <p>Gọi trong hàm của đối tượng</p>
+  <p><b>var</b> Comment = {</p>
+  <p>title = '';</p>
+  <p>addComment : function(){</p>
+  <p>this.validateComment();</p>
+  <p>},</p>
+  <p>validateComment : function(){</p>
+  <p><i>//Do Something</i></p>
+  <p>}</p>
+  <p>}</p>
+  <h3>3/ Mảng đối tượng - Đối tượng chứa đối tượng</h3>
+  <p><i>Mỗi đối tượng (object) trong Javascript có thể chứa các đối tượng khác hoặc một mảng có thể chứa các đối tượng.</i></p>
+  <p><b>a/ Đối tượng chứa đối tượng</b></p>
+  <p>Ví dụ 1 : gom các thuộc tính của Comment vào đối tượng <i>info</i></p>
+  <p><b>var</b> Comment = {</p>
+  <p>info : {</p>
+  <p>title : "",</p>
+  <p>content : "",</p>
+  <p>email : "",</p>
+  <p>fullname : ""</p>
+  <p>}</p>
+  <p>}</p>
+  <p>Ví dụ 2 : gom các phương thức hàm của Comment vào 1 đối tượng <i>func</i></p>
+  <p><b>var</b> Comment = {</p>
+  <p>func : {</p>
+  <p>addComment : function(){</p>
+  <p><i>//Do Something</i></p>
+  <p>},</p>
+  <p>validateComment : function(){</p>
+  <p><i>//Do Something</i></p>
+  <p>}</p>
+  <p>}</p>
+  <p>}</p>
+  <p><i>Lúc này để truy xuất tới các thuộc tính và phương thức này ta chỉ việc sử dụng dấu chấm và bổ sung thêm một cấp nữa.</i></p>
+  <p>Comment.info.title="Đây là 1 comment";</p>
+  <p>Comment.func.addComment();</p>
+  <h3>4/ Mảng chứa đối tượng</h3>
+  <p>Để gán giá trị là 1 đối tượng vào 1 mảng cũng tương tự như cách gán các giá trị bình thường khác.</p>
+  <p><i>//Đối tượng Comment</i></p>
+  <p><b>var</b> Comment = {</p>
+  <p>title = '',</p>
+  <p>content = '',</p>
+  <p>fullname = '';</p>
+  <p>email = ''</p>
+  <p>};</p>
+  <p><i>//Khởi tạo mảng</i></p>
+  <p><b>var</b> arrayComment = [];</p>
+  <p><i>//Gán giá trị cho phần tử mảng</i></p>
+  <p>arrayComment[0] = Comment;</p>
+  <p><i>//Gọi tới 1 thuộc tính</i></p>
+  <p>arrayComent[0].title = "Tiêu đề mảng"</p>
+  <p>alert ( arrayComment[0].title )</p>
+  <hr/>
+  <p>Hoặc ngắn gọn hơn là :</p>
+  <p><b>var</b> Comment = [{</p>
+  <p>title = '',</p>
+  <p>content = '',</p>
+  <p>fullname = '';</p>
+  <p>email = ''</p>
+  <p>}];</p>
+  <p>//Sử dụng</p>
+  <p>Comment[0].title = "Tiêu đề phát nữa";</p>
+  <p>alert ( Comment[0].title )</p>
+</body>
+</html>
