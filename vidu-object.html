@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thao tác với Đối Tượng(Object) trong Javascript</title>
+</head>
+<body>
+  <h3>Viết chương trình quản lý Sinh Viên</h3>
+  <p>Bao gồm các chức năng :</p>
+  <ul>
+    <li>Xem danh sách</li>
+    <li>Thêm sinh viên</li>
+    <li>Sửa thông tin sinh viên</li>
+    <li>Xóa sinh viên</li>
+  </ul>
+  <p>Với mỗi 1 sinh viên cần có các thông tin sau :</p>
+  <ul>
+    <li>Họ tên</li>
+    <li>Mã số sinh viên</li>
+    <li>Email</li>
+  </ul>
+  <script type="text/javascript">
+    var Student = {
+      //Tạo mảng chứa sinh viên
+     data : [],
+     viewStudent : function(){
+       //Lấy danh sách sinh viên
+       var listStudent = this.data;
+       //Tạo vòng lặp để hiển thị ra sinh viên
+       for( var i = 0; i < listStudent.length; i++ ){
+         document.write("<div>" + listStudent[i].id + " | " + listStudent[i].name + " | " + listStudent[i].email + "</div>");
+       }
+     },
+     addStudent : function(id, name, email){
+       //Tạo biến chứa thông tin sinh viên
+      var item = {
+         id : id,
+         name : name,
+         email : email
+       };
+       // Thêm sinh viên
+       this.data.push(item);
+     },
+     removeStudent : function(id){
+       //Chạy vòng lặp để tìm id Sinh viên
+       for( var i = 0; i < this.data.length; i++){
+         //Nếu tìm thấy đúng id của Sinh viên
+         if ( this.data[i].id === id ){
+           //Xóa Sinh viên
+           this.data.splice(i, 1)
+         }
+       }
+     },
+   changeStudent : function(id, name, email){
+     //Chạy vòng lặp tìm id sinh viên muốn thay đổi
+     for ( var i = 0; i < this.data.length; i++ ){
+       //Nếu tìm thấy
+       if( this.data[i].id === id){
+         //Thay đổi thông tin sinh viên
+         this.data[i].name = name,
+         this.data[i].email = email
+       }
+     }
+   }
+   };
+   document.write("<h4>Danh sách sinh viên hiện có</h4>");
+    Student.addStudent("SV001", "ABC", "ABC@GMail.com");
+    Student.addStudent("SV002", "123", "123@gmail.com");
+    Student.addStudent("SV003", "A1B2", "A1B2@yahoo.com.vn");
+    Student.viewStudent();
+    document.write("<br/><h4>Xóa Sinh viên mã số SV002</h4><br/>");
+    document.write("<h4>Danh sách sinh viên hiện tại</h4>");
+    Student.removeStudent("SV002");
+    Student.viewStudent();
+    document.write("<h4>Thay đổi thông tin sinh viên mã số SV001 và SV003</h4>");
+    Student.changeStudent("SV001", "ABC", "ABC@Gmail.com")
+    Student.changeStudent("SV003", "JQK", "Joker@outlook.com");
+    document.write("<h4>Danh sách sinh viên sau khi thay đổi</h4>");
+    Student.viewStudent();
+  </script>
+</body>
+</html>
