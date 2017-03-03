@@ -29,8 +29,8 @@ for (var i = 0; i < 15; i+=a) {
 
 // 4 : Vòng lặp lồng nhau
 
-for (var i = 0; i < 3; i++) {
-  for (var j = 0; j < 3; j++) {
+for (var i = 0; i < 10; i++) {
+  for (var j = 0; j < 10; j++) {
         console.log("[" + i + "]" + "[" + j + "]")
   }
 }
